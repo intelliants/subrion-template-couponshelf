@@ -83,7 +83,7 @@
 		{/if}
 	</head>
 
-	<body class="page-{$core.page.name}">
+	<body class="page-{$core.page.name}{if 'index' != $core.page.name} page--inner{/if}">
 		<div class="hidden">{ia_blocks block='hidden'}</div>
 		<div class="inventory">
 			<div class="container">
@@ -126,14 +126,12 @@
 				</div>
 
 				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<a href="{$core.packages.coupons.url}coupons/add/" class="btn btn-rounded btn-warning navbar-btn navbar-right"><span class="fa fa-paper-plane"></span><span class="btn__text">{lang key='share_your_love'}</span></a>
 					{if 'index' != $core.page.name}
-						<form method="get" action="{$smarty.const.IA_URL}search/" class="search-navbar pull-right">
-							<button class="search-navbar__toggle js-search-navbar-toggle" type="button"><span class="fe fe-search"></span></button>
-							<div class="input-group">
-								<input type="text" name="q" class="form-control" placeholder="{lang key='search'}">
-								<div class="input-group-btn">
-									<button class="btn btn-primary" type="submit">{lang key='search'}</button>
-								</div>
+						<form method="get" action="{$smarty.const.IA_URL}search/" class="navbar-form navbar-right q-search">
+							<div class="form-group q-search__keywords">
+								<input name="keywords" class="form-control" type="text" placeholder="{lang key='search_keywords_placeholder'}">
+								<button type="submit"><span class="fe fe-search"></span></button>
 							</div>
 						</form>
 					{/if}
