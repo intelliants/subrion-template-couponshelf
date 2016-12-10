@@ -1,0 +1,122 @@
+
+//
+// Header
+// --------------------------------------------------
+
+.header {
+  background: #232139 url('../img/bg-header.jpg') 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.teaser {
+  padding: 120px 0;
+  position: relative;
+  text-align: center;
+
+  &__header {
+    h2 {
+      text-transform: uppercase;
+      .font-normalize(36px, 0 0 40px);
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+
+      span {
+        color: @brand-accent;
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -23px;
+        left: 50%;
+        width: 50px;
+        height: 7px;
+        margin-left: -25px;
+        background: transparent url('../img/wave.png') 0 0 no-repeat;
+      }
+    }
+
+    p {
+      color: #fff;
+      margin: 0;
+      font-family: @headings-font-family;
+      .font-normalize(22px, 0);
+    }
+    
+  }
+}
+
+.q-search {
+  width: 60%;
+  margin: 40px auto 0;
+
+  .form-group {
+    position: relative;
+  }
+
+  .form-control {
+    border: 0 none;
+    padding-right: 34px;
+  }
+
+  &__cats {
+    background: #fff;
+    border-radius: @border-radius-base;
+
+    .form-control {
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+      appearance:         none;
+      background: transparent;
+      position: relative;
+      z-index: 20;
+    }
+
+    &::after {
+      .fe();
+      content: "\e129";
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      text-align: center;
+      line-height: 34px;
+      right: 0;
+      top: -2px;
+      font-size: 18px;
+      color: fade(@text-color, 50%);
+    }
+  }
+
+  &__keywords {
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 34px;
+      height: 34px;
+      text-align: center;
+      line-height: 34px;
+      text-align: center;
+      border: 0 none;
+      background: transparent;
+      font-size: 18px;
+      color: fade(@text-color, 50%);
+
+      .fe {
+        top: -4px;
+      }
+
+      &:focus,
+      &:active {
+        outline: 0 none;
+      }
+
+      &:hover {
+        color: @brand-accent;
+      }
+    }
+  }
+}

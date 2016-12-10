@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "feather";
+  src: ~"url('@{icon-font-path}feather-webfont.eot')";
+  src: ~"url('@{icon-font-path}feather-webfont.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{icon-font-path}feather-webfont.woff') format('woff')",
+       ~"url('@{icon-font-path}feather-webfont.ttf') format('truetype')",
+       ~"url('@{icon-font-path}feather-webfont.svg#featherregular') format('svg')";
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Catchall baseclass
+.fe {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  font-family: 'feather';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.feX1 {
+  font-size: @font-size-base + 2;
+}
+
+// Individual icons
+.fe-eye { &:before { content: "\e000"; } }
+.fe-paper-clip { &:before { content: "\e001"; } }
+.fe-mail { &:before { content: "\e002"; } }
+.fe-mail { &:before { content: "\e002"; } }
+.fe-toggle { &:before { content: "\e003"; } }
+.fe-layout { &:before { content: "\e004"; } }
+.fe-link { &:before { content: "\e005"; } }
+.fe-bell { &:before { content: "\e006"; } }
+.fe-lock { &:before { content: "\e007"; } }
+.fe-unlock { &:before { content: "\e008"; } }
+.fe-ribbon { &:before { content: "\e009"; } }
+.fe-image { &:before { content: "\e010"; } }
+.fe-signal { &:before { content: "\e011"; } }
+.fe-target { &:before { content: "\e012"; } }
+.fe-clipboard { &:before { content: "\e013"; } }
+.fe-clock { &:before { content: "\e014"; } }
+.fe-clock { &:before { content: "\e014"; } }
+.fe-watch { &:before { content: "\e015"; } }
+.fe-air-play { &:before { content: "\e016"; } }
+.fe-camera { &:before { content: "\e017"; } }
+.fe-video { &:before { content: "\e018"; } }
+.fe-disc { &:before { content: "\e019"; } }
+.fe-printer { &:before { content: "\e020"; } }
+.fe-monitor { &:before { content: "\e021"; } }
+.fe-server { &:before { content: "\e022"; } }
+.fe-cog { &:before { content: "\e023"; } }
+.fe-heart { &:before { content: "\e024"; } }
+.fe-paragraph { &:before { content: "\e025"; } }
+.fe-align-justify { &:before { content: "\e026"; } }
+.fe-align-left { &:before { content: "\e027"; } }
+.fe-align-center { &:before { content: "\e028"; } }
+.fe-align-right { &:before { content: "\e029"; } }
+.fe-book { &:before { content: "\e030"; } }
+.fe-layers { &:before { content: "\e031"; } }
+.fe-stack { &:before { content: "\e032"; } }
+.fe-stack-2 { &:before { content: "\e033"; } }
+.fe-paper { &:before { content: "\e034"; } }
+.fe-paper-stack { &:before { content: "\e035"; } }
+.fe-search { &:before { content: "\e036"; } }
+.fe-zoom-in { &:before { content: "\e037"; } }
+.fe-zoom-out { &:before { content: "\e038"; } }
+.fe-reply { &:before { content: "\e039"; } }
+.fe-circle-plus { &:before { content: "\e040"; } }
+.fe-circle-minus { &:before { content: "\e041"; } }
+.fe-circle-check { &:before { content: "\e042"; } }
+.fe-circle-cross { &:before { content: "\e043"; } }
+.fe-square-plus { &:before { content: "\e044"; } }
+.fe-square-minus { &:before { content: "\e045"; } }
+.fe-square-check { &:before { content: "\e046"; } }
+.fe-square-cross { &:before { content: "\e047"; } }
+.fe-microphone { &:before { content: "\e048"; } }
+.fe-record { &:before { content: "\e049"; } }
+.fe-skip-back { &:before { content: "\e050"; } }
+.fe-rewind { &:before { content: "\e051"; } }
+.fe-play { &:before { content: "\e052"; } }
+.fe-pause { &:before { content: "\e053"; } }
+.fe-stop { &:before { content: "\e054"; } }
+.fe-fast-forward { &:before { content: "\e055"; } }
+.fe-skip-forward { &:before { content: "\e056"; } }
+.fe-shuffle { &:before { content: "\e057"; } }
+.fe-repeat { &:before { content: "\e058"; } }
+.fe-folder { &:before { content: "\e059"; } }
+.fe-umbrella { &:before { content: "\e060"; } }
+.fe-moon { &:before { content: "\e061"; } }
+.fe-thermometer { &:before { content: "\e062"; } }
+.fe-drop { &:before { content: "\e063"; } }
+.fe-sun { &:before { content: "\e064"; } }
+.fe-cloud { &:before { content: "\e065"; } }
+.fe-cloud-upload { &:before { content: "\e066"; } }
+.fe-cloud-download { &:before { content: "\e067"; } }
+.fe-upload { &:before { content: "\e068"; } }
+.fe-download { &:before { content: "\e069"; } }
+.fe-location { &:before { content: "\e070"; } }
+.fe-location-2 { &:before { content: "\e071"; } }
+.fe-map { &:before { content: "\e072"; } }
+.fe-battery { &:before { content: "\e073"; } }
+.fe-head { &:before { content: "\e074"; } }
+.fe-briefcase { &:before { content: "\e075"; } }
+.fe-speech-bubble { &:before { content: "\e076"; } }
+.fe-anchor { &:before { content: "\e077"; } }
+.fe-globe { &:before { content: "\e078"; } }
+.fe-box { &:before { content: "\e079"; } }
+.fe-reload { &:before { content: "\e080"; } }
+.fe-share { &:before { content: "\e081"; } }
+.fe-marquee { &:before { content: "\e082"; } }
+.fe-marquee-plus { &:before { content: "\e083"; } }
+.fe-marquee-minus { &:before { content: "\e084"; } }
+.fe-tag { &:before { content: "\e085"; } }
+.fe-power { &:before { content: "\e086"; } }
+.fe-command { &:before { content: "\e087"; } }
+.fe-alt { &:before { content: "\e088"; } }
+.fe-esc { &:before { content: "\e089"; } }
+.fe-bar-graph { &:before { content: "\e090"; } }
+.fe-bar-graph-2 { &:before { content: "\e091"; } }
+.fe-pie-graph { &:before { content: "\e092"; } }
+.fe-star { &:before { content: "\e093"; } }
+.fe-arrow-left { &:before { content: "\e094"; } }
+.fe-arrow-right { &:before { content: "\e095"; } }
+.fe-arrow-up { &:before { content: "\e096"; } }
+.fe-arrow-down { &:before { content: "\e097"; } }
+.fe-volume { &:before { content: "\e098"; } }
+.fe-mute { &:before { content: "\e099"; } }
+.fe-content-right { &:before { content: "\e100"; } }
+.fe-content-left { &:before { content: "\e101"; } }
+.fe-grid { &:before { content: "\e102"; } }
+.fe-grid-2 { &:before { content: "\e103"; } }
+.fe-columns { &:before { content: "\e104"; } }
+.fe-loader { &:before { content: "\e105"; } }
+.fe-bag { &:before { content: "\e106"; } }
+.fe-ban { &:before { content: "\e107"; } }
+.fe-flag { &:before { content: "\e108"; } }
+.fe-trash { &:before { content: "\e109"; } }
+.fe-expand { &:before { content: "\e110"; } }
+.fe-contract { &:before { content: "\e111"; } }
+.fe-maximize { &:before { content: "\e112"; } }
+.fe-minimize { &:before { content: "\e113"; } }
+.fe-plus { &:before { content: "\e114"; } }
+.fe-minus { &:before { content: "\e115"; } }
+.fe-check { &:before { content: "\e116"; } }
+.fe-cross { &:before { content: "\e117"; } }
+.fe-move { &:before { content: "\e118"; } }
+.fe-delete { &:before { content: "\e119"; } }
+.fe-menu { &:before { content: "\e120"; } }
+.fe-archive { &:before { content: "\e121"; } }
+.fe-inbox { &:before { content: "\e122"; } }
+.fe-outbox { &:before { content: "\e123"; } }
+.fe-file { &:before { content: "\e124"; } }
+.fe-file-add { &:before { content: "\e125"; } }
+.fe-file-subtract { &:before { content: "\e126"; } }
+.fe-help { &:before { content: "\e127"; } }
+.fe-open { &:before { content: "\e128"; } }
+.fe-ellipsis { &:before { content: "\e129"; } }

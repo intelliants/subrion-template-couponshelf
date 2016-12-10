@@ -1,0 +1,39 @@
+.verytop {
+  background: #fff;
+  padding: @sections-v-pad 0;
+}
+
+.f-shops {
+
+  &__item {
+    text-align: center;
+
+    &__thumb {
+      display: block;
+      border: 1px solid @border-color;
+      border-radius: @border-radius-base;
+      text-decoration: none;
+      margin: 0 0 20px;
+      padding: 10px;
+
+      &:hover {
+        border-color: @brand-accent;
+      }
+    }
+
+    &__title {
+      display: inline-block;
+
+      &,
+      &:focus {
+        color: @text-color;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: @brand-accent;
+        text-decoration: none;
+      }
+    }
+  }
+}

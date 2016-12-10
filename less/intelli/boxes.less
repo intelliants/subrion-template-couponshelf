@@ -1,0 +1,206 @@
+
+//
+// Boxes / blocks
+// --------------------------------------------------
+
+.box {
+
+  &--border {
+    padding: 20px;
+    border: 1px solid @border-color;
+  }
+
+  &--featured {
+    border: 1px solid @brand-info;
+    padding: @gap;
+    background: fade(@brand-info, 10%);
+  }
+
+  &--sponsored {
+    border: 1px solid @brand-warning;
+    padding: @gap;
+    background: fade(@brand-warning, 10%);
+  }
+
+  + .box,
+  + div {
+    margin-top: @vertical-rhythm*2;
+  }
+
+  &__caption {
+    .font-normalize(22px, 0 0 30px);
+    color: @box-caption-color;
+    position: relative;
+    font-family: @headings-font-family;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: -17px;
+      left: 0;
+      width: 50px;
+      height: 7px;
+      background: transparent url('../img/wave-accent.png') 0 0 no-repeat;
+    }
+
+    &.-alt {
+      text-align: center;
+      color: @brand-primary;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    color: @box-content-color;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+//
+// Min max toggle
+// --------------------------------------------------
+
+.collapsible {
+  position: relative;
+
+  &.collapsed {
+
+    .minmax-toggle i {
+      .fa-icon();
+      &:before { content: @fa-var-angle-down; }
+    }
+
+    .box__content,
+    > .fieldset__content {
+      display: none;
+    }
+  }
+}
+
+.minmax-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  color: fade(@text-color, 30%);
+
+  i {
+    .fa-icon();
+    &:before { content: @fa-var-angle-up; }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: fade(@text-color, 50%);
+  }
+}
+
+
+
+//
+// Coupons categories box
+// --------------------------------------------------
+
+.b-cats {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    margin: 0;
+
+    > a {
+      display: block;
+      position: relative;
+      font-size: 16px;
+      padding: 10px;
+      border-top: 1px solid @border-color;
+
+      &,
+      &:focus {
+        color: #626a77;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+        background: @brand-dark;
+      }
+
+      > span {
+        margin-right: 10px;
+        width: 30px;
+        text-align: center;
+      }
+
+      > img {
+        max-width: 30px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    &:first-child > a {
+      border-top: 0;
+    }
+  }
+}
+
+
+
+//
+// Share
+// --------------------------------------------------
+
+.share-coupon {
+  background: #454355 url('../img/bg-share.jpg') 0 0 no-repeat;
+  background-size: cover;
+  padding: 100px 30px 30px;
+
+  h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 36px;
+    margin: 0 0 30px;
+
+    span {
+      color: @brand-accent;
+      font-size: 40px;
+      font-weight: bold;
+      display: block;
+    }
+  }
+}
+
+
+
+//
+// Buzz
+// --------------------------------------------------
+
+.buzz {
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid @border-color;
+  padding: 40px 0;
+  color: fade(@text-color, 20%);
+}

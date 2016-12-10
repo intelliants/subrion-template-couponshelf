@@ -1,0 +1,206 @@
+//
+// Footer
+// --------------------------------------------------
+
+.footer {
+  background: @brand-dark;
+  padding: @sections-v-pad 0 @sections-v-pad*2;
+
+  &__brand {
+    text-align: center;
+
+    .navbar-brand {
+      float: none;
+    }
+  }
+
+}
+
+
+
+//
+// Footer navs
+// --------------------------------------------------
+
+.nav-footer {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style-type: none;
+  .clearfix();
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    margin: 0;
+
+    > a {
+      &,
+      &:focus {
+        display: block;
+        color: @footer-link-color;
+        text-decoration: none;
+        padding: 0 5px;
+      }
+
+      &:hover {
+        color: @footer-link-hover-color;
+        text-decoration: underline;
+      }
+    }
+
+    &.active > a,
+    &.active > a:focus,
+    &.active > a:hover {
+      color: @footer-link-active-color;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    float: none;
+
+    > li {
+
+      > a {
+        line-height: @line-height-computed;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+
+//
+// Footer social nav
+// --------------------------------------------------
+
+.social {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  a {
+    display: inline-block;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: @border-radius-base;
+    background: fade(#fff, 30%);
+    margin: 0 5px;
+    color: @brand-dark;
+    .transition(all .1s ease-in-out);
+
+    &:hover {
+      color: #fff;
+      .scale(1.1);
+    }
+
+    &.twitter {
+
+      &:hover {
+        background: #55acee;
+      }
+    }
+
+    &.facebook {
+
+      &:hover {
+        background: #3b5998;
+      }
+    }
+
+    &.google-plus {
+
+      &:hover {
+        background: #dd4b39;
+      }
+    }
+
+    &.youtube {
+
+      &:hover {
+        background: #cd201f;
+      }
+    }
+  }
+}
+
+
+
+//
+// Footer text
+// --------------------------------------------------
+
+.copyright {
+  margin: 0 auto;
+  color: @footer-text-color;
+  text-align: center;
+  width: 60%;
+  font-size: 14px;
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  a {
+    &,
+    &:focus {
+      color: @footer-link-color;
+    }
+
+    &:hover {
+      color: @footer-link-hover-color;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    width: auto;
+  }
+}
+
+
+
+//
+// Back to top button
+// --------------------------------------------------
+
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  border: 0 none;
+  background: @brand-primary;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: @border-radius-base;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  outline: 0 none;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  .transition(all .15s ease-in-out);
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &:hover {
+    background: @link-color;
+    margin-bottom: 3px;
+  }
+
+  &.on {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    bottom: 10px;
+    right: 10px;
+  }
+}
