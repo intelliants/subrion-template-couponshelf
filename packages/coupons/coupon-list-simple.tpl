@@ -1,7 +1,7 @@
 <div class="coupon{if $listing.featured} -featured{/if}{if $listing.sponsored} -sponsored{/if}">
 	<div class="coupon__img">
 		{if $listing.shop_image}
-			<a href="{printImage imgfile=$listing.shop_image.path url=true}">
+			<a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">
 				{printImage imgfile=$listing.shop_image.path title=$listing.shop_title|escape:'html' class='img-responsive'}
 			</a>
 		{else}
@@ -19,7 +19,7 @@
 			*}
 		</div>
 		<div class="coupon__title">
-			{ia_url type='link' item='coupons' data=$listing text=$listing.title}
+			{$listing.title}
 		</div>
 		<div class="coupon__desc">{$listing.short_description|strip_tags|truncate:150:'...'}</div>
 		<div class="coupon__shop">

@@ -20,7 +20,11 @@
     > a {
       display: block;
       border: 1px solid @border-color;
-      padding: 10px;
+      padding: 5px;
+
+      img {
+        .img-responsive();
+      }
     }
   }
 
@@ -62,6 +66,29 @@
     &-wrp {
       position: relative;
       padding: 20px;
+    }
+
+    &-price {
+      margin-bottom: 15px;
+
+      &__old {
+        color: fade(@text-color, 50%);
+        text-decoration: line-through;
+        display: inline-block;
+      }
+
+      &__current {
+        display: inline-block;
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: bold;
+        color: @brand-success;
+      }
+
+      &__save {
+        display: block;
+        color: @brand-success;
+      }
     }
   }
 
@@ -122,5 +149,22 @@
         border-left: 1px solid @border-color;
       }
     }
+  }
+
+  .btn-coupon {
+
+    &__cover {
+      .transition(all .15s ease-in-out);
+    }
+  }
+}
+
+.coupon.-deal {
+  .coupon__time-left {
+    margin-bottom: 15px;
+  }
+
+  .coupon-rate {
+    margin: 0;
   }
 }
