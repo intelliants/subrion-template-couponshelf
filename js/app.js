@@ -38,14 +38,18 @@ $(function() {
 	}
 
 	// print coupon
-	$('.js-print-coupon').click(function(e) {
-		e.preventDefault();
+	if ($('.page--printable-coupon').length) {
+		$('.js-print-page').off('click');
 
-		var $clone = $('.d-view__info__img img').clone();
-		$('.printable-area').html($clone);
+		$('.js-print-coupon, .js-print-page').click(function(e) {
+			e.preventDefault();
 
-		window.print();
-	});
+			var $clone = $('.d-view__info__img img').clone();
+			$('.printable-area').html($clone);
+
+			window.print();
+		});
+	}
 
 	// back to top button
 	var $backToTopBtn = $('.js-back-to-top');
