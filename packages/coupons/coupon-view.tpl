@@ -37,7 +37,12 @@ $(function()
 	});
 });
 			{/ia_add_js}
+		{elseif $item.coupon_image}
+			<div class="d-view__info__img">
+				{printImage imgfile=$item.coupon_image.path type='source' title=$item.title|escape:'html' class='img-responsive'}
+			</div>
 		{/if}
+
 		<div class="d-view-deal">
 			<div class="d-view-deal__actions">
 				{foreach $core.actions as $name => $action}
@@ -51,14 +56,20 @@ $(function()
 				{/foreach}
 			</div>
 			<div class="d-view-deal__type">{lang key="{$item.coupon_type}_coupon"}</div>
-			<div class="d-view-deal__price">
-				<span class="d-view-deal__price__current">{(int)$item.discounted_price}</span>
-				<span class="d-view-deal__price__old">{lang key='old_price'}: <span>{(int)$item.item_price}</span></span>
-				<span class="d-view-deal__price__save">{lang key='you_save'}: {(int)$item.discount_saving}</span>
-			</div>
+			{if 'deal' == $item.coupon_type}
+				<div class="d-view-deal__price">
+					<span class="d-view-deal__price__current">{(int)$item.discounted_price}</span>
+					<span class="d-view-deal__price__old">{lang key='old_price'}: <span>{(int)$item.item_price}</span></span>
+					<span class="d-view-deal__price__save">{lang key='you_save'}: {(int)$item.discount_saving}</span>
+				</div>
+			{/if}
 
 			<div class="d-view-deal__buy">
-				<a href="#" class="d-view-deal__buy__btn">{lang key='buy'}</a>
+				{if 'deal' == $item.coupon_type}
+					<a href="#" class="d-view-deal__buy__btn">{lang key='buy'}</a>
+				{else}
+					<a href="#" class="d-view-deal__buy__btn js-print-coupon"><span class="fa fa-print"></span> {lang key='print_coupon'}</a>
+				{/if}
 
 				<div class="coupon-rate">
 					<a href="#" class="thumbs-up" data-id="{$item.id}" data-trigger="up"><i class="fa fa-smile-o"></i></a>
@@ -95,6 +106,7 @@ $(function()
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="tab-description">
+					{$item.short_description}
 					{$item.description}
 				</div>
 			</div>

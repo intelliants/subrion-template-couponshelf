@@ -47,6 +47,12 @@
       float: left;
     }
 
+    &__img {
+      float: left;
+      width: 54%;
+      padding: 40px;
+    }
+
     .d-view-deal {
       overflow: hidden;
     }
@@ -194,7 +200,8 @@
       border-radius: 3px;
       min-width: 120px;
 
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: none;
         background: lighten(@brand-accent, 5%);
       }
@@ -313,5 +320,17 @@
     text-align: center;
     padding: 5px;
     margin-bottom: 20px;
+  }
+}
+
+@media print {
+  .page--printable-coupon > * {
+    display: none;
+    visibility: hidden;
+  }
+
+  .page--printable-coupon > .printable-area {
+    display: block;
+    visibility: visible;
   }
 }

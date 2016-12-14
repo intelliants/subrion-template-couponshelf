@@ -83,7 +83,7 @@
 		{/if}
 	</head>
 
-	<body class="page-{$core.page.name}{if 'index' != $core.page.name} page--inner{/if}">
+	<body class="page-{$core.page.name}{if 'index' != $core.page.name} page--inner{/if}{if $item && 'printable' == $item.coupon_type} page--printable-coupon{/if}">
 		<div class="hidden">{ia_blocks block='hidden'}</div>
 		<div class="inventory">
 			<div class="container">
@@ -305,5 +305,7 @@
 		{ia_hooker name='smartyFrontFinalize'}
 
 		<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={$core.config.addthis_id}"></script> 
+
+		<div class="printable-area"></div>
 	</body>
 </html>
