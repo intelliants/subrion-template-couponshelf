@@ -21,16 +21,11 @@
 		<position>bottom</position>
 		<position>verybottom</position>
 		<position>copyright</position>
+		<position>shop</position>
 
 		<section name="content">
 			<position width="9">center</position>
 			<position fixed="1">right</position>
-		</section>
-		<section name="footer-blocks">
-			<position width="3">footer1</position>
-			<position width="3">footer2</position>
-			<position width="3">footer3</position>
-			<position width="3">footer4</position>
 		</section>
 	</layout>
 
@@ -220,6 +215,14 @@
 			show="website_social|1"
 			description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
 
+	<config group="template_couponshelf"
+			name="addthis_id"
+			type="text"
+			order="4100"
+			description="AddThis ID">ra-58510178e50465b5</config>
+
+
+
 	<config group="template_couponshelf" 
 			name="ckeditor_css"
 			type="hidden"
@@ -234,9 +237,10 @@
 		<block status="active" position="verybottom" sticky="1" header="0" title="Featured shops and places">featured_shops</block>
 		<block status="active" sticky="0" pages="index" title="Recommended Deals and Coupons for you" collapsible="0">featured_coupons</block>
 		<block status="active" collapsible="0">new_coupons</block>
-		<block status="active" collapsible="0">coupon_of_the_day</block>
 		<block status="active" position="right" title="Categories" order="-1">browse_coupons</block>
 		<block status="active" position="right" order="2" header="0">share_coupon</block>
+		<block status="active" collapsible="0" position="right" order="3" classname="box--special">deal_of_the_day</block>
+		<block status="active" position="shop">shop_info</block>
 		<block status="active" position="right">new_blog_posts</block>
 		<block status="active" position="right">blogs_archive</block>
 
@@ -282,5 +286,9 @@
 
 		<phrase category="frontend" key="search_category_placholder">Select category</phrase>
 		<phrase category="frontend" key="search_keywords_placeholder">Search deals, coupons, promocodes...</phrase>
+
+		<phrase category="frontend" key="old_price">Old price</phrase>
+		<phrase category="frontend" key="buy">buy</phrase>
+		<phrase category="frontend" key="bought">bought</phrase>
 	</phrases>
 </template>

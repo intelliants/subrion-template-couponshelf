@@ -1,0 +1,317 @@
+.d-view {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 60px;
+
+    h1 {
+      .font-normalize(22px, 0 0 40px);
+      color: @box-caption-color;
+      position: relative;
+      font-family: @headings-font-family;
+      text-align: center;
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -23px;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 7px;
+        background: transparent url('../img/wave-accent.png') 0 0 no-repeat;
+      }
+    }
+
+    p {
+      color: fade(@text-color, 50%);
+      margin: 0;
+      font-size: 12px;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &__info {
+    .clearfix();
+    .box-shadow(0 1px 1px rgba(0,0,0,.1));
+    background: #fff;
+
+    .sl-gallery {
+      width: 54%;
+      float: left;
+    }
+
+    .d-view-deal {
+      overflow: hidden;
+    }
+  }
+}
+
+.sl-gallery {
+  
+  .owl-controls {
+    position: absolute;
+    background: fade(#000, 35%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+  }
+
+  .owl-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      background: none;
+      color: #fff;
+      border-radius: 0;
+      left: 20px;
+      top: 7px;
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        background: none;
+        color: @brand-accent;
+      }
+    }
+
+    .owl-next {
+      left: auto;
+      right: 20px;
+    }
+  }
+
+  .owl-dots {
+    font-size: 0;
+    line-height: 0;
+
+    .owl-dot {
+
+      span {
+        width: 20px;
+        height: 4px;
+        background: #fff;
+      }
+
+      &.active span {
+        background: @brand-accent;
+      }
+
+      &:hover span {
+        background: @brand-accent;
+      }
+    }
+  }
+}
+
+.d-view-deal {
+  padding: 40px 60px;
+
+  &__actions {
+    float: right;
+
+    a {
+      display: inline-block;
+      margin-left: 10px;
+
+      &,
+      &:focus {
+        color: fade(@text-color, 50%);
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: @brand-accent;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__type {
+    text-transform: uppercase;
+    color: fade(@text-color, 50%);
+    margin-bottom: 30px;
+  }
+
+  &__price {
+    margin-bottom: 30px;
+
+    &__current {
+      display: block;
+      font-size: 55px;
+      line-height: 55px;
+      font-weight: bold;
+      color: @brand-success;
+    }
+
+    &__old {
+      display: inline-block;
+      margin-right: 30px;
+      color: fade(@text-color, 50%);
+      font-size: 16px;
+
+      span {
+        text-decoration: line-through;
+      }
+    }
+
+    &__save {
+      display: inline-block;
+      color: @brand-success;
+      font-size: 16px;
+    }
+  }
+
+  &__buy {
+    .clearfix();
+    margin-bottom: 30px;
+
+    &__btn {
+      color: @text-color;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 20px;
+      float: left;
+      display: block;
+      margin-right: 30px;
+      background: @brand-accent;
+      padding: 5px 20px;
+      text-align: center;
+      border-radius: 3px;
+      min-width: 120px;
+
+      &:hover {
+        text-decoration: none;
+        background: lighten(@brand-accent, 5%);
+      }
+    }
+  }
+
+  .coupon-rate {
+    margin: 0;
+    display: table;
+    border-radius: 3px;
+    border: 1px solid @border-color;
+
+    > a,
+    > span {
+      display: table-cell;
+      font-size: 18px;
+      height: auto;
+      line-height: 36px;
+      vertical-align: middle;
+    }
+
+    > span {
+      font-size: 14px;
+      background: #fff;
+      min-width: 50px;
+    }
+
+    > a {
+      background: #fff;
+      border-right: 1px solid @border-color;
+      width: 40px;
+      color: #ccc !important;
+
+      &:last-child {
+        border-right: 0;
+        border-left: 1px solid @border-color;
+      }
+    }
+  }
+
+  &__more {
+    .clearfix();
+
+    &__item {
+      float: left;
+      margin-right: 30px;
+      color: fade(@text-color, 70%);
+
+      .fe {
+        color: fade(@text-color, 30%);
+        font-size: 18px;
+      }
+
+      &.-time-left {
+        color: @brand-danger;
+      }
+    }
+  }
+}
+
+
+.d-view-tabs {
+
+  .nav-tabs {
+    margin-bottom: 30px;
+
+    > li {
+      margin: 0;
+
+      > a {
+        border-radius: 0;
+        font-size: 16px;
+        margin-right: 0;
+
+        &,
+        &:focus {
+          color: fade(@text-color, 50%);
+          border: 0 none;
+          background: none;
+        }
+
+        &:hover {
+          background: none;
+          color: @text-color;
+        }
+      }
+
+      &.active > a,
+      &.active > a:hover
+      &.active > a:focus {
+        color: @text-color;
+        border: 0 none;
+        position: relative;
+
+        &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -2px;
+          height: 3px;
+          background: @brand-accent;
+        }
+      }
+    }
+  }
+}
+
+
+.shop-info {
+
+  &__img {
+    border: 1px solid @border-color;
+    background: #fff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+}

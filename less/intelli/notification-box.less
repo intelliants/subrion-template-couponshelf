@@ -10,7 +10,7 @@
   right: 0;
   top: 0;
   z-index: 15000;
-  padding: @vertical-rhythm/2;
+  padding: 20px;
   display: none;
   background: @brand-info;
   color: #fff;
@@ -30,23 +30,19 @@
   }
 
   &--info {
-    background: @brand-info;
+    background: fade(@brand-info, 90%);
   }
 
   &--success {
-    background: @brand-success;
+    background: fade(@brand-success, 90%);
   }
 
   &--error {
-    background: @brand-danger;
+    background: fade(@brand-danger, 90%);
   }
 
   @media (min-width: @grid-float-breakpoint) {
-    left: auto;
-    right: 20px;
-    top: 20px;
-    max-width: 300px;
-    padding: 20px;
-    border-radius: 4px;
+    text-align: center;
+    padding: 40px;
   }
 }

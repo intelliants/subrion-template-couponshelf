@@ -193,31 +193,30 @@
 						</div>
 					{else}
 						<div class="row">
-							<div class="{width section='content' position='left' tag='col-md-'} aside">
-								{ia_blocks block='left'}
-							</div>
 							<div class="{width section='content' position='center' tag='col-md-'}">
 								<div class="content__wrap">
 
 									{ia_blocks block='top'}
 
 									{if 'index' != $core.page.name}
-										<div class="content__header">
-											<h1>{$core.page.title}</h1>
-											<ul class="content__actions">
-												{foreach $core.actions as $name => $action}
-													<li>
-														{if 'action-favorites' == $name}
-															{printFavorites item=$item itemtype=$item.item guests=true}
-														{else}
-															<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
-																<span class="fa fa-{$name}"></span>
-															</a>
-														{/if}
-													</li>
-												{/foreach}
-											</ul>
-										</div>
+										{if 'coupon_view' != $core.page.name}
+											<div class="content__header">
+												<h1>{$core.page.title}</h1>
+												<ul class="content__actions">
+													{foreach $core.actions as $name => $action}
+														<li>
+															{if 'action-favorites' == $name}
+																{printFavorites item=$item itemtype=$item.item guests=true}
+															{else}
+																<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
+																	<span class="fa fa-{$name}"></span>
+																</a>
+															{/if}
+														</li>
+													{/foreach}
+												</ul>
+											</div>
+										{/if}
 
 										{ia_hooker name='smartyFrontBeforeNotifications'}
 										{include 'notification.tpl'}
@@ -304,5 +303,7 @@
 		{ia_print_js display='on'}
 
 		{ia_hooker name='smartyFrontFinalize'}
+
+		<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={$core.config.addthis_id}"></script> 
 	</body>
 </html>

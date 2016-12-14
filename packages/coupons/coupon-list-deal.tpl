@@ -47,7 +47,7 @@
 			<div class="coupon__price-price">
 				<span class="coupon__price-price__current">{(int)$listing.discounted_price}</span>
 				<span class="coupon__price-price__old">{(int)$listing.item_price}</span>
-				<span class="coupon__price-price__save">You save: {(int)$listing.discount_saving}</span>
+				<span class="coupon__price-price__save">{lang key='you_save'}: {(int)$listing.discount_saving}</span>
 			</div>
 
 			<a href="{ia_url type='url' item='coupons' data=$listing}" class="btn-coupon btn-coupon-link"><span class="fa fa-shopping-cart"></span> {lang key='get_deal'}</a>
