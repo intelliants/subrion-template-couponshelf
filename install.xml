@@ -97,7 +97,7 @@
 			name="max_top_menu_items"
 			type="text"
 			description="Max number of items in Main Menu"
-			order="3201">5</config>
+			order="3201">4</config>
 	<config group="template_couponshelf"
 			name="enable_text_logo"
 			type="radio"
@@ -221,8 +221,6 @@
 			order="4100"
 			description="AddThis ID">ra-58510178e50465b5</config>
 
-
-
 	<config group="template_couponshelf" 
 			name="ckeditor_css"
 			type="hidden"
@@ -233,17 +231,19 @@
 		<menu position="account" status="active">account</menu>
 		<menu position="copyright" status="active">coupons</menu>
 
+		<block status="active" position="teaser" header="0">coupons_search</block>
+		<block status="active" position="right" title="Categories" sticky="0" pages="index,coupons_home" collapsible="0" order="-1">coupon_categories</block>
 		<block status="active" position="verytop" sticky="0" pages="index" title="Popular shops with best deals">popular_shops</block>
 		<block status="active" position="verybottom" sticky="1" header="0" title="Featured shops and places">featured_shops</block>
 		<block status="active" sticky="0" pages="index" title="Recommended Deals and Coupons for you" collapsible="0">featured_coupons</block>
 		<block status="active" collapsible="0">new_coupons</block>
-		<block status="active" position="right" title="Categories" order="-1">browse_coupons</block>
 		<block status="active" position="right" order="2" header="0">share_coupon</block>
 		<block status="active" collapsible="0" position="right" order="3" classname="box--special">deal_of_the_day</block>
 		<block status="active" position="shop">shop_info</block>
 		<block status="active" position="right">new_blog_posts</block>
 		<block status="active" position="right">blogs_archive</block>
 
+		<block status="inactive" position="bottom" title="Categories" order="-1">browse_coupons</block>
 		<block status="inactive">blogroll</block>
 		<block status="inactive" position="right">common_statistics</block>
 		<block status="inactive" position="right">filters</block>
@@ -284,6 +284,8 @@
 		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 		<phrase category="frontend" key="admin_dashboard">Admin Dashboard</phrase>
 
+		<phrase category="frontend" key="teaser_title"><![CDATA[Best <span>Coupons &amp; Deals</span>]]></phrase>
+		<phrase category="frontend" key="teaser_subtitle"><![CDATA[We’ve got you covered! Browse more than <u>1000 stores</u> to find perfect deal.]]></phrase>
 		<phrase category="frontend" key="search_category_placholder">Select category</phrase>
 		<phrase category="frontend" key="search_keywords_placeholder">Search deals, coupons, promocodes...</phrase>
 

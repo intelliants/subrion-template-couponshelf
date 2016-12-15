@@ -4,7 +4,7 @@
 	{ia_menu menus=$menu.contents class="nav-inventory hidden-sm hidden-xs pull-right {$menu.classname}"}
 {elseif 'account' == $position}
 	{if 'account' == $menu.name && $member && $core.config.members_enabled}
-		<ul class="nav-inventory hidden-sm hidden-xs pull-right nav-account">
+		<ul class="nav-inventory pull-right nav-account">
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					{*printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email*}
@@ -15,11 +15,11 @@
 				{ia_menu menus=$menu.contents class='dropdown-menu pull-right' loginout=true}
 			</li>
 			{access object='admin_access'}
-				<li><a rel="nofollow" href="{$smarty.const.IA_ADMIN_URL}" target="_blank" title="{lang key='admin_dashboard'}"><span class="fe feX1 fe-cog"></span><span class="hidden-lg"> {lang key='admin_dashboard'}</span></a></li>
+				<li><a rel="nofollow" href="{$smarty.const.IA_ADMIN_URL}" target="_blank" title="{lang key='admin_dashboard'}"><span class="fe feX1 fe-cog"></span></a></li>
 			{/access}
 		</ul>
 	{else}
-		<ul class="nav-inventory hidden-sm hidden-xs pull-right nav-account">
+		<ul class="nav-inventory pull-right nav-account">
 			<li{if 'login' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}login/">{lang key='login'}</a></li>
 			<li class="nav-account__sign-up{if 'member_registration' == $core.page.name} active{/if}"><a href="{$smarty.const.IA_URL}registration/">{lang key='register'}</a></li>
 		</ul>

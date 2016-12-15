@@ -7,6 +7,19 @@
   border-radius: 0;
   border: 0 none;
   background-color: #5b53a9;
+
+  .navbar-toggle {
+    border-color: darken(@brand-dark, 5%);
+
+    .icon-bar {
+      background: #fff;
+    }
+
+    &:hover,
+    &:focus {
+      background: darken(@brand-dark, 5%);
+    }
+  }
 }
 
 .navbar-sticky {
@@ -25,6 +38,9 @@
   .navbar-collapse {
     max-height: 320px;
 
+    @media (max-width: @grid-float-breakpoint) {
+      border-top-color: darken(@brand-dark, 5%);
+    }
   }
 }
 
@@ -81,7 +97,7 @@
     li {
 
       > a {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid darken(@brand-dark, 5%);
       }
     }
   }
@@ -97,6 +113,19 @@
   .page--inner & {
     .btn__text {
       display: none;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    display: block;
+    width: auto;
+    border-radius: 0;
+    margin: 0 -15px;
+
+    .page--inner & {
+      .btn__text {
+        display: inline-block;
+      }
     }
   }
 }

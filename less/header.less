@@ -46,6 +46,20 @@
     }
     
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: 60px 0;
+
+    &__header {
+      h2 {
+        .font-normalize(26px, 0 0 40px);
+      }
+
+      p {
+        .font-normalize(18px, 0);
+      }
+    }
+  }
 }
 
 .q-search {
@@ -123,5 +137,10 @@
   .page--inner & {
     width: auto;
     margin: 33px 15px;
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    width: auto;
+    margin: 20px auto 0;
   }
 }

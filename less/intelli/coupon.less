@@ -10,6 +10,10 @@
     margin-top: 15px;
   }
 
+  @media (max-width: @screen-xs) {
+    display: block;
+  }
+
   &__img {
     display: table-cell;
     vertical-align: top;
@@ -26,6 +30,10 @@
         .img-responsive();
       }
     }
+
+    @media (max-width: @screen-sm) {
+      display: none;
+    }
   }
 
   &__body {
@@ -33,6 +41,14 @@
     vertical-align: top;
     padding: 20px 20px 20px 0;
     height: 100%;
+
+    @media (max-width: @screen-sm) {
+      padding-left: 20px;
+    }
+
+    @media (max-width: @screen-xs) {
+      display: block;
+    }
   }
 
   &__type {
@@ -62,6 +78,11 @@
     border-left: 1px solid @border-color;
     width: 30%;
     height: 100%;
+
+    @media (max-width: @screen-xs) {
+      display: block;
+      width: auto;
+    }
 
     &-wrp {
       position: relative;

@@ -83,7 +83,7 @@
 		{/if}
 	</head>
 
-	<body class="page-{$core.page.name}{if 'index' != $core.page.name} page--inner{/if}{if $item && 'printable' == $item.coupon_type} page--printable-coupon{/if}">
+	<body class="page-{$core.page.name}{if 'index' != $core.page.name} page--inner{/if}{if isset($item.coupon_type) && 'printable' == $item.coupon_type} page--printable-coupon{/if}">
 		<div class="hidden">{ia_blocks block='hidden'}</div>
 		<div class="inventory">
 			<div class="container">
@@ -130,7 +130,7 @@
 					{if 'index' != $core.page.name}
 						<form method="get" action="{$smarty.const.IA_URL}search/" class="navbar-form navbar-right q-search">
 							<div class="form-group q-search__keywords">
-								<input name="keywords" class="form-control" type="text" placeholder="{lang key='search_keywords_placeholder'}">
+								<input name="q" class="form-control" type="text" placeholder="{lang key='search_keywords_placeholder'}">
 								<button type="submit"><span class="fe fe-search"></span></button>
 							</div>
 						</form>
@@ -145,7 +145,7 @@
 		{else}
 			{if 'index' == $core.page.name}
 				<header class="header">
-					{include 'block.teaser.tpl'}
+					{ia_blocks block='teaser'}
 				</header>
 			{/if}
 
