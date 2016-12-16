@@ -3,7 +3,6 @@
 	<div class="shops-list">
 		{foreach $shops as $listing}
 			{if $letter|upper != $listing.title[0]|upper}
-				{if '' != $letter}</ul>{/if}
 				<h2>{$listing.title[0]|upper}</h2>
 				<hr>
 			{/if}

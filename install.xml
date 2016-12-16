@@ -279,7 +279,7 @@
 	</blocks>
 
 	<phrases>
-		<phrase category="frontend" key="login">My Account</phrase>
+		<phrase category="frontend" key="my_account">My Account</phrase>
 		<phrase category="frontend" key="register">Sign up</phrase>
 		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 		<phrase category="frontend" key="admin_dashboard">Admin Dashboard</phrase>

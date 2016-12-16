@@ -52,30 +52,27 @@
 
 .fieldset {
 
-  &:first-of-type .fieldset__header {
-    padding-top: 0;
-  }
-
   &__header {
-    .font-normalize(18px, 0 -@fieldest-padding-horizontal @fieldest-padding-vertical);
-    padding: @fieldest-padding-vertical/2 @fieldest-padding-horizontal;
-    text-transform: none;
-    border-bottom: 1px solid @nav-tabs-border-color;
+    .font-normalize(14px, 0 0 15px);
+    padding: 0 20px 0;
+    text-transform: uppercase;
     color: fade(@text-color, 50%);
-
-    + .fieldset__content {
-      padding-top: 0;
-    }
   }
 
   &__content {
-    padding: @fieldest-padding-vertical 0;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 40px;
   }
 
   &__actions {
-    background: #f0f0f0;
-    margin: 0 -@fieldest-padding-horizontal -@fieldest-padding-vertical;
-    padding: @fieldest-padding-vertical @fieldest-padding-horizontal;
+    background: transparent;
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  .fields-description {
+    font-style: italic;
   }
 }
 
@@ -108,26 +105,60 @@
 .tabbable {
   margin-bottom: @vertical-rhythm /2;
 
-  .nav-tabs {
-    margin-bottom: 0;
-  }
-
   .tab-content {
-    border: 1px solid @nav-tabs-border-color;
-    border-top: 0 none;
+    border: 0 none;
   }
 
   .tab-pane {
-    padding: @fieldest-padding-vertical @fieldest-padding-horizontal;
+    padding: 0;
+  }
+
+  .nav-tabs {
+    margin-bottom: 30px;
+
+    > li {
+      margin: 0;
+
+      > a {
+        border-radius: 0;
+        font-size: 16px;
+        margin-right: 0;
+
+        &,
+        &:focus {
+          color: fade(@text-color, 50%);
+          border: 0 none;
+          background: none;
+        }
+
+        &:hover {
+          background: none;
+          color: @text-color;
+        }
+      }
+
+      &.active > a,
+      &.active > a:hover
+      &.active > a:focus {
+        color: @text-color;
+        border: 0 none;
+        position: relative;
+
+        &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -2px;
+          height: 3px;
+          background: @brand-accent;
+        }
+      }
+    }
   }
 }
 
-.ia-form {
-
-  .tab-pane .fieldset:first-of-type .fieldset__header {
-    padding-top: 0;
-  }
-}
 
 
 //

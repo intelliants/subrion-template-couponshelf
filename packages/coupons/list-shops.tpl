@@ -1,4 +1,3 @@
-
 <div class="coupon">
 	<div class="coupon__img">
 		{if $listing.shop_image}
