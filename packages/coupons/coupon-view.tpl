@@ -100,7 +100,7 @@ $(function()
 <div class="row">
 	<div class="col-md-9">
 		<div class="d-view-tabs">
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs nav-tabs-nice">
 				<li class="active"><a data-toggle="tab" href="#tab-description">{lang key='description'}</a></li>
 			</ul>
 

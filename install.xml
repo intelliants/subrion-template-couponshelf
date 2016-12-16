@@ -292,5 +292,9 @@
 		<phrase category="frontend" key="old_price">Old price</phrase>
 		<phrase category="frontend" key="buy">buy</phrase>
 		<phrase category="frontend" key="bought">bought</phrase>
+
+		<phrase category="frontend" key="all_coupons">All coupons</phrase>
+		<phrase category="frontend" key="active_coupons">Active coupons</phrase>
+		<phrase category="frontend" key="expired_coupons">Expired coupons</phrase>
 	</phrases>
 </template>

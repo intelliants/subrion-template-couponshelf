@@ -199,7 +199,7 @@
 									{ia_blocks block='top'}
 
 									{if 'index' != $core.page.name}
-										{if 'coupon_view' != $core.page.name}
+										{if 'coupon_view' != $core.page.name && 'shop_view' != $core.page.name}
 											<div class="content__header">
 												<h1>{$core.page.title}</h1>
 												<ul class="content__actions">
