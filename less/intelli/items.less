@@ -3,7 +3,7 @@
 // Local vars
 // --------------------------------------------------
 
-@gap:                   15px;
+@gap:                   30px;
 @item-link-color:       @link-color;
 @item-link-color-hover: @link-hover-color;
 
@@ -16,17 +16,19 @@
 .ia-sorting {
   .clearfix();
   margin-bottom: @gap;
-  padding: 10px;
-  background: #f2f2f2;
-}
+  padding: 0;
 
-.alpha-sorting {
+  &__count {
+    float: left;
+    font-weight: bold;
+    line-height: 30px;
+  }
 
-  a {
-    width: 40px;
-    margin: 0 0 3px 0;
+  &__sorting {
+    float: right;
   }
 }
+
 
 // lists
 .ia-items { 

@@ -1,0 +1,27 @@
+.cats {
+  .clearfix();
+  margin-bottom: 30px;
+
+  &__item {
+    display: block;
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 6px 12px;
+    border-radius: 4px;
+
+    &,
+    &:focus {
+      background: fade(@brand-dark, 14%);
+      color: fade(@brand-dark, 80%);
+      text-decoration: none;
+      outline: 0 none;
+    }
+
+    &:hover {
+      background: @brand-accent;
+      text-decoration: none;
+      color: @text-color;
+    }
+
+  }
+}

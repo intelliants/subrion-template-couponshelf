@@ -32,11 +32,7 @@
 			<li{if isset($smarty.get.sorting) && 'active' == $smarty.get.sorting} class="active"{/if}><a href="{$smarty.const.IA_SELF}?sorting=active">{lang key='active_coupons'}</a></li>
 			<li{if isset($smarty.get.sorting) && 'expired' == $smarty.get.sorting} class="active"{/if}><a href="{$smarty.const.IA_SELF}?sorting=expired">{lang key='expired_coupons'}</a></li>
 			<li class="nav-tabs-nice__info">
-				{if $coupons}
-					{lang key='coupons'}: {$coupons|count}
-				{elseif $coupons_expired}
-					{lang key='expired_coupons'}: {$coupons_expired|count}
-				{/if}
+				{lang key='coupons'}: {$couponsNum}
 			</li>
 		</ul>
 

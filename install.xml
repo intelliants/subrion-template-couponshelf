@@ -288,6 +288,7 @@
 		<phrase category="frontend" key="teaser_subtitle"><![CDATA[We’ve got you covered! Browse more than <u>1000 stores</u> to find perfect deal.]]></phrase>
 		<phrase category="frontend" key="search_category_placholder">Select category</phrase>
 		<phrase category="frontend" key="search_keywords_placeholder">Search deals, coupons, promocodes...</phrase>
+		<phrase category="frontend" key="coupons_found">Coupons found</phrase>
 
 		<phrase category="frontend" key="old_price">Old price</phrase>
 		<phrase category="frontend" key="buy">buy</phrase>

@@ -61,7 +61,8 @@
 .ia-form-system {
   max-width: 400px;
   margin: 0 auto;
-  .box-shadow(0 0 15px rgba(0,0,0,.15));
+  .box-shadow(0 1px 1px rgba(0,0,0,.1));
+  // .box-shadow(0 0 15px rgba(0,0,0,.15));
   padding: 40px;
   background: #fff;
 
@@ -86,25 +87,34 @@
   &.-registration {
     padding: 0;
 
+    .fieldset__header {
+      padding: 0;
+    }
+
+    .fieldset__content {
+      padding: 0;
+      .box-shadow(none);
+    }
+
     .ia-form {
       padding: 40px;
       border: 0 none;
     }
 
-    .fieldset__header {
-      margin-left: -40px;
-      margin-right: -40px;
-      padding-left: 40px;
-      padding-right: 40px;
-      border-bottom-color: @border-color;
-    }
+    // .fieldset__header {
+    //   margin-left: -40px;
+    //   margin-right: -40px;
+    //   padding-left: 40px;
+    //   padding-right: 40px;
+    //   border-bottom-color: @border-color;
+    // }
 
-    .fieldset__actions {
-      margin-left: -40px;
-      margin-right: -40px;
-      padding-left: 40px;
-      padding-right: 40px;
-    }
+    // .fieldset__actions {
+    //   margin-left: -40px;
+    //   margin-right: -40px;
+    //   padding-left: 40px;
+    //   padding-right: 40px;
+    // }
   }
 
   @media (max-width: @screen-sm) {
