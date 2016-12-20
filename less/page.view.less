@@ -56,6 +56,19 @@
     .d-view-deal {
       overflow: hidden;
     }
+
+    @media (max-width: @grid-float-breakpoint) {
+      .sl-gallery {
+        float: none;
+        width: auto;
+      }
+
+      &__img {
+        float: none;
+        width: auto;
+        padding: 15px;
+      }
+    }
   }
 }
 
@@ -259,6 +272,10 @@
         color: @brand-danger;
       }
     }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: 20px;
   }
 }
 

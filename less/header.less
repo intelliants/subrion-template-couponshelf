@@ -142,5 +142,12 @@
   @media (max-width: @grid-float-breakpoint) {
     width: auto;
     margin: 20px auto 0;
+
+    .page--inner & {
+      margin: 0;
+      border: 0 none;
+      .box-shadow(none);
+      padding: 15px 0;
+    }
   }
 }
