@@ -71,7 +71,6 @@
 					{/if}
 				}
 
-				.footer-blocks { background: {$core.config.footer_blocks_bg}; }
 				.footer { background: {$core.config.footer_bg}; }
 				.nav-footer > li > a,
 				.nav-footer > li > a:focus { color: {$core.config.footer_link}; }
