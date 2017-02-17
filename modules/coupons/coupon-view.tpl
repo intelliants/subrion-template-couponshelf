@@ -15,7 +15,7 @@
 			<div class="owl-carousel sl-gallery">
 				{foreach $item.gallery as $img}
 					<div class="sl-gallery__item">
-						{printImage imgfile=$img.path fullimage=true title=$img.title|default:$item.title|escape:'html'}
+						{ia_image file=$img type='large' title=$img.title|default:$item.title|escape:'html'}
 					</div>
 				{/foreach}
 			</div>
@@ -39,7 +39,7 @@ $(function()
 			{/ia_add_js}
 		{elseif $item.coupon_image}
 			<div class="d-view__info__img">
-				{printImage imgfile=$item.coupon_image.path type='source' title=$item.title|escape:'html' class='img-responsive'}
+				{ia_image file=$item.coupon_image type='large' title=$item.title|default:$item.title|escape:'html' class='img-responsive'}
 			</div>
 		{/if}
 

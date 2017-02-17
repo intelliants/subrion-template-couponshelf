@@ -3,11 +3,11 @@
 		<div class="coupon__img">
 			{if $coupon_blocks.oftheday.gallery}
 				<a href="{ia_url type='url' item='coupons' data=$coupon_blocks.oftheday}">
-					<img src="{$smarty.const.IA_CLEAR_URL}uploads/{$coupon_blocks.oftheday.gallery[0].path}" alt="{$coupon_blocks.oftheday.shop_title|escape:'html'}">
+					{ia_image file=$coupon_blocks.oftheday.gallery[0] type='thumbnail' alt="{$coupon_blocks.oftheday.shop_title|escape:'html'}"}
 				</a>
 			{elseif $coupon_blocks.oftheday.shop_image}
 				<a href="{$smarty.const.IA_URL}shop/{$coupon_blocks.oftheday.shop_alias}.html">
-					{printImage imgfile=$coupon_blocks.oftheday.shop_image.path title=$coupon_blocks.oftheday.shop_title|escape:'html' class='img-responsive'}
+					{ia_image file=$coupon_blocks.oftheday.shop_image type='thumbnail' alt="{$coupon_blocks.oftheday.shop_title|escape:'html'}" class='img-responsive'}
 				</a>
 			{else}
 				<a href="{$smarty.const.IA_URL}shop/{$coupon_blocks.oftheday.shop_alias}.html">

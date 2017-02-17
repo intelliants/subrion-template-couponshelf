@@ -7,11 +7,7 @@
 		{foreach $categories as $cat}
 			<a href="{ia_url type='url' item='ccats' data=$cat text=$cat.title rel='tag'}" class="cats__item">
 				<span class="cats__item__icon">
-					{if $cat.icon}
-						{printImage imgfile=$cat.icon.path title=$cat.title|escape:'html'}
-					{else}
-						<span class="fa fa-{if $cat.category_icon_class}{$cat.category_icon_class}{else}folder-o{/if}"></span>
-					{/if}
+					<span class="fa {if $cat.icon}{$cat.icon}{else}fa-folder-o{/if}"></span>
 				</span>
 				<span class="cats__item__title">{$cat.title}</span>
 			</a>

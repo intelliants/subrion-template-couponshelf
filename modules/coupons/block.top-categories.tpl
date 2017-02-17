@@ -3,11 +3,7 @@
 		{foreach $coupon_blocks.top_categories as $cat}
 			<li>
 				<a href="{ia_url type='url' item='ccats' data=$cat}">
-					{if $cat.icon}
-						{printImage imgfile=$cat.icon.path title=$cat.title|escape:'html'}
-					{else}
-						<span class="fa fa-{if $cat.category_icon_class}{$cat.category_icon_class}{else}folder-o{/if}"></span>
-					{/if}
+					<span class="fa {if $cat.icon}{$cat.icon}{else}fa-folder-o{/if}"></span>
 					{$cat.title}
 				</a>
 			</li>

@@ -2,11 +2,11 @@
 	<div class="coupon__img">
 		{if $listing.gallery}
 			<a href="{ia_url type='url' item='coupons' data=$listing}">
-				<img src="{$smarty.const.IA_CLEAR_URL}uploads/{$listing.gallery[0].path}" alt="{$listing.shop_title|escape:'html'}">
+				{ia_image file=$listing.gallery[0] type='thumbnail' title=$listing.shop_title|escape:'html'}
 			</a>
 		{elseif $listing.shop_image}
 			<a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">
-				{printImage imgfile=$listing.shop_image.path title=$listing.shop_title|escape:'html' class='img-responsive'}
+				{ia_image file=$listing.shop_image type='thumbnail' title=$listing.shop_title|escape:'html' class='img-responsive'}
 			</a>
 		{else}
 			<a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">

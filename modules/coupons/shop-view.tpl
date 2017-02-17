@@ -1,7 +1,7 @@
 <div class="shop-page">
 	{if $shop.shop_image}
 		<div class="shop-page__image">
-			{printImage imgfile=$shop.shop_image.path title=$shop.title|escape:'html'}
+			{ia_image file=$shop.shop_image type='thumbnail' title=$shop.title}
 		</div>
 	{else}
 		<div class="shop-page__image-screen">
