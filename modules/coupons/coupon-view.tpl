@@ -15,7 +15,7 @@
 			<div class="owl-carousel sl-gallery">
 				{foreach $item.gallery as $img}
 					<div class="sl-gallery__item">
-						{ia_image file=$img type='large' title=$img.title|default:$item.title|escape:'html'}
+						{ia_image file=$img type='large' title=$img.title|default:$item.title|escape}
 					</div>
 				{/foreach}
 			</div>
@@ -149,7 +149,7 @@ $(function()
 	{else}
 		<div class="text-center">
 			<a href="{printImage imgfile=$item.coupon_image url=true fullimage=true}" rel="ia_lightbox[{$item.title}]">
-				{printImage imgfile=$item.coupon_image fullimage="true" class='img-responsive' title=$item.title|escape:'html'}
+				{printImage imgfile=$item.coupon_image fullimage="true" class='img-responsive' title=$item.title|escape}
 			</a>
 		</div>
 	{/if}
