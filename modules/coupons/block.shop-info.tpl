@@ -1,9 +1,9 @@
-{if isset($shop)}
+{if !empty($shop)}
     <div class="shop-info">
         <div class="shop-info__img">
-            {if $shop.shop_image}
+            {if !empty($shop.shop_image)}
                 <a href="{$smarty.const.IA_URL}shop/{$shop.title_alias}.html">
-                    {printImage imgfile=$shop.shop_image.path title=$shop.title|escape:'html' class='img-responsive center-block'}
+                    {ia_image file=$shop.shop_image type='thumbnail' title=$listing.shop_title|escape class='img-responsive center-block'}
                 </a>
             {else}
                 <a href="{$smarty.const.IA_URL}shop/{$shop.title_alias}.html">
