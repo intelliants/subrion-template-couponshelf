@@ -1,296 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template name="couponshelf">
-	<title>CouponShelf</title>
-	<summary>Template for Subrion Coupons Script</summary>
-	<author>Gleb Surinov</author>
-	<contributor>Intelliants LLC</contributor>
-	<version>1.0.0</version>
-	<date>2016-12-10</date>
-	<compatibility>4.1</compatibility>
+<module type="template" name="couponshelf">
+    <title>CouponShelf</title>
+    <summary>Template for Subrion Coupons Script</summary>
+    <author>Gleb Surinov</author>
+    <contributor>Intelliants LLC</contributor>
+    <version>1.0.0</version>
+    <date>2017-04-03</date>
+    <compatibility>4.1</compatibility>
 
-	<layout>
-		<position>hidden</position>
+    <layout>
+        <position>hidden</position>
 
-		<position menu="1" movable="0">account</position>
-		<position menu="1" movable="0">mainmenu</position>
+        <position menu="1" movable="0">account</position>
+        <position menu="1" movable="0">mainmenu</position>
 
-		<position>inventory</position>
-		<position>teaser</position>
-		<position>verytop</position>
-		<position>top</position>
-		<position>bottom</position>
-		<position>verybottom</position>
-		<position>copyright</position>
-		<position>shop</position>
+        <position>inventory</position>
+        <position>teaser</position>
+        <position>verytop</position>
+        <position>top</position>
+        <position>bottom</position>
+        <position>verybottom</position>
+        <position>copyright</position>
+        <position>shop</position>
 
-		<section name="content">
-			<position width="9">center</position>
-			<position fixed="1">right</position>
-		</section>
-	</layout>
+        <section name="content">
+            <position width="9">center</position>
+            <position fixed="1">right</position>
+        </section>
+    </layout>
 
-	<configgroup name="template_couponshelf">Template</configgroup>
+    <configgroup name="template_couponshelf">Template</configgroup>
 
-	<config group="template_couponshelf"
-			type="divider"
-			order="3000">General</config>
-	<config group="template_couponshelf"
-			name="custom_colors"
-			type="radio"
-			order="3002"
-			values="1,0"
-			description="Enable custom colors and backgrounds">0</config>
-	<config group="template_couponshelf"
-			name="custom_color_body_bg"
-			type="colorpicker"
-			order="3003"
-			description="Body background">#f5f9ff</config>
-	<config group="template_couponshelf"
-			name="custom_color_text"
-			type="colorpicker"
-			order="3004"
-			description="Text color">#232323</config>
-	<config group="template_couponshelf"
-			name="custom_color_headings"
-			type="colorpicker"
-			order="3005"
-			description="Headings color">#232323</config>
-	<config group="template_couponshelf"
-			name="custom_color_link"
-			type="colorpicker"
-			order="3006"
-			description="Link color">#5b53a9</config>
-	<config group="template_couponshelf"
-			name="custom_color_link_hover"
-			type="colorpicker"
-			order="3007"
-			description="Link hover color">#3f3a76</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="3000">General</config>
+    <config group="template_couponshelf"
+            name="custom_colors"
+            type="radio"
+            order="3002"
+            values="1,0"
+            description="Enable custom colors and backgrounds">0</config>
+    <config group="template_couponshelf"
+            name="custom_color_body_bg"
+            type="colorpicker"
+            order="3003"
+            description="Body background">#f5f9ff</config>
+    <config group="template_couponshelf"
+            name="custom_color_text"
+            type="colorpicker"
+            order="3004"
+            description="Text color">#232323</config>
+    <config group="template_couponshelf"
+            name="custom_color_headings"
+            type="colorpicker"
+            order="3005"
+            description="Headings color">#232323</config>
+    <config group="template_couponshelf"
+            name="custom_color_link"
+            type="colorpicker"
+            order="3006"
+            description="Link color">#5b53a9</config>
+    <config group="template_couponshelf"
+            name="custom_color_link_hover"
+            type="colorpicker"
+            order="3007"
+            description="Link hover color">#3f3a76</config>
 
-	<config group="template_couponshelf" 
-			type="divider"
-			order="3100">Inventory bar</config>
-	<config group="template_couponshelf"
-			name="custom_color_inventory_bg"
-			type="colorpicker"
-			order="3102"
-			description="Background">#635bb2</config>
-	<config group="template_couponshelf"
-			name="custom_color_inventory_link"
-			type="colorpicker"
-			order="3103"
-			description="Link color">rgba(255,255,255,0.2)</config>
-	<config group="template_couponshelf"
-			name="custom_color_inventory_link_hover"
-			type="colorpicker"
-			order="3104"
-			description="Link hover color">rgba(255,255,255,0.5)</config>
-	<config group="template_couponshelf"
-			name="custom_color_inventory_link_active"
-			type="colorpicker"
-			order="3105"
-			description="Link active color">rgba(255,255,255,0.7)</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="3100">Inventory bar</config>
+    <config group="template_couponshelf"
+            name="custom_color_inventory_bg"
+            type="colorpicker"
+            order="3102"
+            description="Background">#635bb2</config>
+    <config group="template_couponshelf"
+            name="custom_color_inventory_link"
+            type="colorpicker"
+            order="3103"
+            description="Link color">rgba(255,255,255,0.2)</config>
+    <config group="template_couponshelf"
+            name="custom_color_inventory_link_hover"
+            type="colorpicker"
+            order="3104"
+            description="Link hover color">rgba(255,255,255,0.5)</config>
+    <config group="template_couponshelf"
+            name="custom_color_inventory_link_active"
+            type="colorpicker"
+            order="3105"
+            description="Link active color">rgba(255,255,255,0.7)</config>
 
-	<config group="template_couponshelf" 
-			type="divider"
-			order="3200">Navbar / Mainmenu</config>
-	<config group="template_couponshelf" 
-			name="max_top_menu_items"
-			type="text"
-			description="Max number of items in Main Menu"
-			order="3201">6</config>
-	<config group="template_couponshelf"
-			name="enable_text_logo"
-			type="radio"
-			order="3202"
-			values="1,0"
-			description="Enable Logo text">0</config>
-	<config group="template_couponshelf"
-			name="logo_text"
-			type="text"
-			order="3203"
-			show="enable_text_logo|1"
-			description="Logo text">couponshelf</config>
-	<config group="template_couponshelf"
-			name="navbar_sticky"
-			type="radio"
-			order="3204"
-			values="1,0"
-			description="Sticky navbar">1</config>
-	<config group="template_couponshelf"
-			name="custom_color_navbar_bg"
-			type="colorpicker"
-			order="3206"
-			description="Background">#5b53a9</config>
-	<config group="template_couponshelf"
-			name="custom_color_navbar_link"
-			type="colorpicker"
-			order="3207"
-			description="Link color">rgba(255,255,255,0.5)</config>
-	<config group="template_couponshelf"
-			name="custom_color_navbar_link_hover"
-			type="colorpicker"
-			order="3208"
-			description="Link hover color">rgba(255,255,255,0.9)</config>
-	<config group="template_couponshelf"
-			name="custom_color_navbar_link_active"
-			type="colorpicker"
-			order="3209"
-			description="Link active color">#f9d602</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="3200">Navbar / Mainmenu</config>
+    <config group="template_couponshelf"
+            name="max_top_menu_items"
+            type="text"
+            description="Max number of items in Main Menu"
+            order="3201">6</config>
+    <config group="template_couponshelf"
+            name="enable_text_logo"
+            type="radio"
+            order="3202"
+            values="1,0"
+            description="Enable Logo text">0</config>
+    <config group="template_couponshelf"
+            name="logo_text"
+            type="text"
+            order="3203"
+            show="enable_text_logo|1"
+            description="Logo text">couponshelf</config>
+    <config group="template_couponshelf"
+            name="navbar_sticky"
+            type="radio"
+            order="3204"
+            values="1,0"
+            description="Sticky navbar">1</config>
+    <config group="template_couponshelf"
+            name="custom_color_navbar_bg"
+            type="colorpicker"
+            order="3206"
+            description="Background">#5b53a9</config>
+    <config group="template_couponshelf"
+            name="custom_color_navbar_link"
+            type="colorpicker"
+            order="3207"
+            description="Link color">rgba(255,255,255,0.5)</config>
+    <config group="template_couponshelf"
+            name="custom_color_navbar_link_hover"
+            type="colorpicker"
+            order="3208"
+            description="Link hover color">rgba(255,255,255,0.9)</config>
+    <config group="template_couponshelf"
+            name="custom_color_navbar_link_active"
+            type="colorpicker"
+            order="3209"
+            description="Link active color">#f9d602</config>
 
-	<config group="template_couponshelf" 
-			type="divider"
-			order="3300">Header / Teaser</config>
-	<config group="template_couponshelf" 
-			name="bg_header"
-			type="image"
-			description="Background image"
-			order="3301"><![CDATA[]]></config>
-	<config group="template_couponshelf" 
-			name="bg_header_use_color"
-			type="radio"
-			values="1,0"
-			description="Use color instead image"
-			order="3302">0</config>
-	<config group="template_couponshelf"
-			name="bg_header_color"
-			type="colorpicker"
-			order="3303"
-			show="bg_header_use_color|1"
-			description="Background color">#232139</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="3300">Header / Teaser</config>
+    <config group="template_couponshelf"
+            name="bg_header"
+            type="image"
+            description="Background image"
+            order="3301"><![CDATA[]]></config>
+    <config group="template_couponshelf"
+            name="bg_header_use_color"
+            type="radio"
+            values="1,0"
+            description="Use color instead image"
+            order="3302">0</config>
+    <config group="template_couponshelf"
+            name="bg_header_color"
+            type="colorpicker"
+            order="3303"
+            show="bg_header_use_color|1"
+            description="Background color">#232139</config>
 
-	<config group="template_couponshelf" 
-			type="divider"
-			order="3400">Footer</config>
-	<config group="template_couponshelf"
-			name="footer_bg"
-			type="colorpicker"
-			order="3401"
-			description="Background">#5b53a9</config>
-	<config group="template_couponshelf"
-			name="footer_link"
-			type="colorpicker"
-			order="3402"
-			description="Link color">rgba(255,255,255,0.45)</config>
-	<config group="template_couponshelf"
-			name="footer_link_hover"
-			type="colorpicker"
-			order="3403"
-			description="Link hover color">rgba(255,255,255,0.5)</config>
-	<config group="template_couponshelf"
-			name="footer_link_active"
-			type="colorpicker"
-			order="3404"
-			description="Link active color">rgba(255,255,255,0.7)</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="3400">Footer</config>
+    <config group="template_couponshelf"
+            name="footer_bg"
+            type="colorpicker"
+            order="3401"
+            description="Background">#5b53a9</config>
+    <config group="template_couponshelf"
+            name="footer_link"
+            type="colorpicker"
+            order="3402"
+            description="Link color">rgba(255,255,255,0.45)</config>
+    <config group="template_couponshelf"
+            name="footer_link_hover"
+            type="colorpicker"
+            order="3403"
+            description="Link hover color">rgba(255,255,255,0.5)</config>
+    <config group="template_couponshelf"
+            name="footer_link_active"
+            type="colorpicker"
+            order="3404"
+            description="Link active color">rgba(255,255,255,0.7)</config>
 
-	<config group="template_couponshelf" 
-			type="divider"
-			order="4000">Social links</config>
-	<config group="template_couponshelf"
-			name="website_social"
-			type="radio"
-			order="4001"
-			values="1,0"
-			description="Show links">1</config>
-	<config group="template_couponshelf"
-			name="website_social_t"
-			type="text"
-			order="4002"
-			show="website_social|1"
-			description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
-	<config group="template_couponshelf"
-			name="website_social_f"
-			type="text"
-			order="4003"
-			show="website_social|1"
-			description="Facebook Link">https://www.facebook.com/Intelliants</config>
-	<config group="template_couponshelf"
-			name="website_social_g"
-			type="text"
-			order="4004"
-			show="website_social|1"
-			description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
+    <config group="template_couponshelf"
+            type="divider"
+            order="4000">Social links</config>
+    <config group="template_couponshelf"
+            name="website_social"
+            type="radio"
+            order="4001"
+            values="1,0"
+            description="Show links">1</config>
+    <config group="template_couponshelf"
+            name="website_social_t"
+            type="text"
+            order="4002"
+            show="website_social|1"
+            description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
+    <config group="template_couponshelf"
+            name="website_social_f"
+            type="text"
+            order="4003"
+            show="website_social|1"
+            description="Facebook Link">https://www.facebook.com/Intelliants</config>
+    <config group="template_couponshelf"
+            name="website_social_g"
+            type="text"
+            order="4004"
+            show="website_social|1"
+            description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
 
-	<config group="template_couponshelf"
-			name="addthis_id"
-			type="text"
-			order="4100"
-			description="AddThis ID">ra-58510178e50465b5</config>
+    <config group="template_couponshelf"
+            name="addthis_id"
+            type="text"
+            order="4100"
+            description="AddThis ID">ra-58510178e50465b5</config>
 
-	<config group="template_couponshelf" 
-			name="ckeditor_css"
-			type="hidden"
-			description="CKEditor CSS"
-			order="5000">ckeditor.css</config>
+    <config group="template_couponshelf"
+            name="ckeditor_css"
+            type="hidden"
+            description="CKEditor CSS"
+            order="5000">ckeditor.css</config>
 
-	<changeset>
-		<menu position="account" status="active">account</menu>
-		<menu position="copyright" status="active">coupons</menu>
+    <changeset>
+        <menu position="account" status="active">account</menu>
+        <menu position="copyright" status="active">coupons</menu>
 
-		<block status="active" position="teaser" header="0">coupons_search</block>
-		<block status="active" position="right" title="Categories" sticky="0" pages="index,coupons_home" collapsible="0" order="-1">coupon_categories</block>
-		<block status="active" position="verytop" sticky="0" pages="index" title="Popular shops with best deals">popular_shops</block>
-		<block status="active" position="verybottom" sticky="1" header="0" title="Featured shops and places">featured_shops</block>
-		<block status="active" sticky="0" pages="index" title="Recommended Deals and Coupons for you" collapsible="0">featured_coupons</block>
-		<block status="active" collapsible="0">new_coupons</block>
-		<block status="active" position="right" order="2" header="0">share_coupon</block>
-		<block status="active" collapsible="0" position="right" order="3" classname="box--special">deal_of_the_day</block>
-		<block status="active" position="shop">shop_info</block>
-		<block status="active" position="right">new_blog_posts</block>
-		<block status="active" position="right">blogs_archive</block>
+        <block status="active" position="teaser" header="0">coupons_search</block>
+        <block status="active" position="right" title="Categories" sticky="0" pages="index,coupons_home" collapsible="0" order="-1">coupon_categories</block>
+        <block status="active" position="verytop" sticky="0" pages="index" title="Popular shops with best deals">popular_shops</block>
+        <block status="active" position="verybottom" sticky="1" header="0" title="Featured shops and places">featured_shops</block>
+        <block status="active" sticky="0" pages="index" title="Recommended Deals and Coupons for you" collapsible="0">featured_coupons</block>
+        <block status="active" collapsible="0">new_coupons</block>
+        <block status="active" position="right" order="2" header="0">share_coupon</block>
+        <block status="active" collapsible="0" position="right" order="3" classname="box--special">deal_of_the_day</block>
+        <block status="active" position="shop">shop_info</block>
+        <block status="active" position="right">new_blog_posts</block>
+        <block status="active" position="right">blogs_archive</block>
 
-		<block status="inactive" position="bottom" title="Categories" order="-1">browse_coupons</block>
-		<block status="inactive">blogroll</block>
-		<block status="inactive" position="right">common_statistics</block>
-		<block status="inactive" position="right">filters</block>
-	</changeset>
+        <block status="inactive" position="bottom" title="Categories" order="-1">browse_coupons</block>
+        <block status="inactive">blogroll</block>
+        <block status="inactive" position="right">common_statistics</block>
+        <block status="inactive" position="right">filters</block>
+    </changeset>
 
-	<blocks>
-		<block name="top"
-			   title="Top Ad"
-			   position="top"
-			   header="0"
-			   collapsible="0"
-			   sticky="0"
-			   pages="index"
-			   status="active"
-			   type="html">
-			<![CDATA[
+    <blocks>
+        <block name="top"
+               title="Top Ad"
+               position="top"
+               header="0"
+               collapsible="0"
+               sticky="0"
+               pages="index"
+               status="active"
+               type="html">
+            <![CDATA[
 <div class="buzz">Advertisement place</div>
-			]]>
-		</block>
-		<block name="bottom_block"
-			   title="Bottom Ad"
-			   position="bottom"
-			   header="0"
-			   collapsible="0"
-			   sticky="0"
-			   pages="index"
-			   status="active"
-			   type="html">
-			<![CDATA[
+            ]]>
+        </block>
+        <block name="bottom_block"
+               title="Bottom Ad"
+               position="bottom"
+               header="0"
+               collapsible="0"
+               sticky="0"
+               pages="index"
+               status="active"
+               type="html">
+            <![CDATA[
 <div class="buzz">Advertisement place</div>
-			]]>
-		</block>
-	</blocks>
+            ]]>
+        </block>
+    </blocks>
 
-	<phrases>
-		<phrase category="frontend" key="my_account">My Account</phrase>
-		<phrase category="frontend" key="register">Sign up</phrase>
-		<phrase category="frontend" key="back_to_top">Back to top</phrase>
-		<phrase category="frontend" key="admin_dashboard">Admin Dashboard</phrase>
+    <phrases>
+        <phrase category="frontend" key="my_account">My Account</phrase>
+        <phrase category="frontend" key="register">Sign up</phrase>
+        <phrase category="frontend" key="back_to_top">Back to top</phrase>
+        <phrase category="frontend" key="admin_dashboard">Admin Dashboard</phrase>
 
-		<phrase category="frontend" key="teaser_title"><![CDATA[Best <span>Coupons &amp; Deals</span>]]></phrase>
-		<phrase category="frontend" key="teaser_subtitle"><![CDATA[We’ve got you covered! Browse more than <u>1000 stores</u> to find perfect deal.]]></phrase>
-		<phrase category="frontend" key="search_category_placholder">Select category</phrase>
-		<phrase category="frontend" key="search_keywords_placeholder">Search deals, coupons, promocodes...</phrase>
-		<phrase category="frontend" key="coupons_found">Coupons found</phrase>
+        <phrase category="frontend" key="teaser_title"><![CDATA[Best <span>Coupons &amp; Deals</span>]]></phrase>
+        <phrase category="frontend" key="teaser_subtitle"><![CDATA[We’ve got you covered! Browse more than <u>1000 stores</u> to find perfect deal.]]></phrase>
+        <phrase category="frontend" key="search_category_placholder">Select category</phrase>
+        <phrase category="frontend" key="search_keywords_placeholder">Search deals, coupons, promocodes...</phrase>
+        <phrase category="frontend" key="coupons_found">Coupons found</phrase>
 
-		<phrase category="frontend" key="old_price">Old price</phrase>
-		<phrase category="frontend" key="buy">buy</phrase>
-		<phrase category="frontend" key="bought">bought</phrase>
+        <phrase category="frontend" key="old_price">Old price</phrase>
+        <phrase category="frontend" key="buy">buy</phrase>
+        <phrase category="frontend" key="bought">bought</phrase>
 
-		<phrase category="frontend" key="all_coupons">All coupons</phrase>
-		<phrase category="frontend" key="active_coupons">Active coupons</phrase>
-		<phrase category="frontend" key="expired_coupons">Expired coupons</phrase>
-	</phrases>
-</template>
+        <phrase category="frontend" key="all_coupons">All coupons</phrase>
+        <phrase category="frontend" key="active_coupons">Active coupons</phrase>
+        <phrase category="frontend" key="expired_coupons">Expired coupons</phrase>
+    </phrases>
+</module>
