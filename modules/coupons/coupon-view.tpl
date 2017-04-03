@@ -39,7 +39,7 @@ $(function()
             {/ia_add_js}
         {elseif $item.coupon_image}
             <div class="d-view__info__img">
-                {ia_image file=$item.coupon_image type='large' title=$item.title|default:$item.title|escape:'html' class='img-responsive'}
+                {ia_image file=$item.coupon_image type='large' title=$item.title|default:$item.title|escape class='img-responsive'}
             </div>
         {/if}
 

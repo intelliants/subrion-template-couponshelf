@@ -2,7 +2,7 @@
     <div class="coupon__img">
         {if $listing.shop_image}
             <a href="{$smarty.const.IA_URL}shop/{$listing.title_alias}.html">
-                {ia_image file=$listing.shop_image type='thumbnail' title=$listing.title|escape:'html' class='img-responsive'}
+                {ia_image file=$listing.shop_image type='thumbnail' title=$listing.title|escape class='img-responsive'}
             </a>
         {else}
             <a href="{$smarty.const.IA_URL}shop/{$listing.title_alias}.html" class="pull-left ia-item-thumbnail">

@@ -6,7 +6,7 @@
             </a>
         {elseif $listing.shop_image}
             <a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">
-                {ia_image file=$listing.shop_image type='thumbnail' title=$listing.shop_title|escape:'html' class='img-responsive'}
+                {ia_image file=$listing.shop_image type='thumbnail' title=$listing.shop_title|escape class='img-responsive'}
             </a>
         {else}
             <a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">
@@ -67,11 +67,11 @@
         {if $listing.coupon_image}
             {assign 'imgthumb' $listing.coupon_image|unserialize}
             <a href="{printImage imgfile=$imgthumb.path url=true fullimage=true}" rel="ia_lightbox">
-                {printImage imgfile=$imgthumb.path title=$listing.title|escape:'html' class='img-responsive'}
+                {printImage imgfile=$imgthumb.path title=$listing.title|escape class='img-responsive'}
             </a>
         {elseif $listing.shop_image}
             <a href="{printImage imgfile=$listing.shop_image.path url=true fullimage=true}" rel="ia_lightbox">
-                {printImage imgfile=$listing.shop_image.path title=$listing.shop_title|escape:'html' class='img-responsive'}
+                {printImage imgfile=$listing.shop_image.path title=$listing.shop_title|escape class='img-responsive'}
             </a>
         {else}
             <a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html" class="ia-item-thumbnail">
