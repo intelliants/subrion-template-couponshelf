@@ -59,9 +59,27 @@ $(function()
 
             {if 'deal' == $item.type}
                 <div class="d-view-body__price">
-                    <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.discounted_price}</span>
-                    <span class="d-view-body__price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span></span>
-                    <span class="d-view-body__price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{(int)$item.discount_saving}</span>
+                    {if $item.item_price && '0.00' != $item.item_price}
+                        {if $item.item_discount}
+                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.discounted_price}</span>
+                            <span class="d-view-body__price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span></span>
+                            <span class="d-view-body__price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{(int)$item.discount_saving}</span>
+                        {else}
+                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span>
+                        {/if}
+                    {else}
+                        <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.cost}</span>
+                        {if $item.item_discount}
+                            <span class="d-view-body__price__save">
+                                {lang key='you_save'} 
+                                {if 'percent' == $item.item_discount_type}
+                                    {$item.item_discount}%
+                                {else}
+                                    {$core.config.coupon_item_price_currency}{$item.item_discount|string_format:"%.2f"}
+                                {/if}
+                            </span>
+                        {/if}
+                    {/if}
                 </div>
             {/if}
 
