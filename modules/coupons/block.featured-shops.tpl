@@ -14,9 +14,8 @@
             </div>
         {/foreach}
     </div>
-{/if}
-{ia_print_js files='_IA_TPL_owl.carousel.min'}
-{ia_add_js}
+    {ia_print_js files='_IA_TPL_owl.carousel.min'}
+    {ia_add_js}
 $(function() {
     $('.js-f-shops').owlCarousel({
         items: 6,
@@ -41,4 +40,5 @@ $(function() {
         }
     });
 });
-{/ia_add_js}
+    {/ia_add_js}
+{/if}

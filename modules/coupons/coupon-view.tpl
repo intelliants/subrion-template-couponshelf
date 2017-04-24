@@ -67,14 +67,14 @@ $(function()
                 <div class="d-view-body__price">
                     {if $item.item_price && '0.00' != $item.item_price}
                         {if $item.item_discount}
-                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.discounted_price}</span>
-                            <span class="d-view-body__price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span></span>
-                            <span class="d-view-body__price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{(int)$item.discount_saving}</span>
+                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.discounted_price}</span>
+                            <span class="d-view-body__price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{$item.item_price}</span></span>
+                            <span class="d-view-body__price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{$item.discount_saving}</span>
                         {else}
-                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span>
+                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.item_price}</span>
                         {/if}
                     {else}
-                        <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.cost}</span>
+                        <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.cost}</span>
                         {if $item.item_discount}
                             <span class="d-view-body__price__save">
                                 {lang key='you_save'} 
@@ -137,6 +137,9 @@ $(function() {
         <div class="d-view-tabs">
             <ul class="nav nav-tabs nav-tabs-nice">
                 <li class="active"><a data-toggle="tab" href="#tab-description">{lang key='description'}</a></li>
+                {if isset($codes)}
+                    <li><a data-toggle="tab" href="#tab-stats">{lang key='sales_statistics'}</a></li>
+                {/if}
             </ul>
 
             <div class="tab-content">
@@ -144,6 +147,41 @@ $(function() {
                     {$item.short_description}
                     {$item.description}
                 </div>
+                {if isset($codes)}
+                    <div class="tab-pane" id="tab-stats">
+                        {if $codes}
+                            <table class="table">
+                                <tbody>
+                                    {$total = 0}
+                                    {foreach $codes as $codeEntry}
+                                        {$total = $total + $codeEntry.amount}
+                                        <tr>
+                                            <td>
+                                                <p>{lang key='simple_coupon'} <strong>{$codeEntry.code}</strong></p>
+                                                <p>{$codeEntry.owner|escape}</p>
+                                                <p><small>{lang key='transaction'} #{$codeEntry.reference_id}</small></p>
+                                            </td>
+                                            <td>{$codeEntry.date_paid|date_format}</td>
+                                            <td>
+                                                <select class="form-control js-code-status" data-id="{$codeEntry.id}">
+                                                    {foreach $codeStatuses as $status}
+                                                        <option value="{$status}"{if $codeEntry.status == $status} selected{/if}>{lang key=$status}</option>
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>{$codeEntry.currency} {$codeEntry.amount}</td>
+                                        </tr>
+                                    {/foreach}
+                                    <tr>
+                                        <td colspan="4" class="text-right"><strong>{lang key='total'}: {$total}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        {else}
+                            <div class="alert alert-info">{lang key='no_codes_bought'}</div>
+                        {/if}
+                    </div>
+                {/if}
             </div>
         </div>
     </div>
