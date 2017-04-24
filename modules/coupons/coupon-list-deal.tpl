@@ -45,14 +45,20 @@
             <div class="coupon__price-price">
                 {if $listing.item_price && '0.00' != $listing.item_price}
                     {if $listing.item_discount}
-                        <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.discounted_price}</span>
-                        <span class="coupon__price-price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{$listing.item_price}</span></span>
-                        <span class="coupon__price-price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{$listing.discount_saving}</span>
+                        <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.cost}</span><br>
+                        <span class="coupon__price-price__old">{lang key='old_price'} <span>{$core.config.coupon_item_price_currency}{$listing.item_price}</span></span>
+                        <span class="coupon__price-price__save">{lang key='you_save'}
+                            {if 'percent' == $listing.item_discount_type}
+                                {$listing.item_discount}%
+                            {else}
+                                {$core.config.coupon_item_price_currency}{$listing.item_discount|string_format:"%.2f"}
+                            {/if}
+                        </span>
                     {else}
                         <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.item_price}</span>
                     {/if}
                 {else}
-                    <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.cost}</span>
+                    <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.cost}</span><br>
                     {if $listing.item_discount}
                         <span class="coupon__price-price__save">
                             {lang key='you_save'} 
