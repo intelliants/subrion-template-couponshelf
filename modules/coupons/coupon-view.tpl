@@ -12,15 +12,16 @@
 
     <div class="d-view__info{if 'deal' == $item.type} -deal{/if}">
         {if $item.gallery}
-            <div class="owl-carousel sl-gallery">
-                {foreach $item.gallery as $img}
-                    <div class="sl-gallery__item">
-                        {ia_image file=$img type='large' title=$img.title|default:$item.title|escape}
-                    </div>
-                {/foreach}
-            </div>
+            {if count($item.gallery) > 1}
+                <div class="owl-carousel sl-gallery">
+                    {foreach $item.gallery as $img}
+                        <div class="sl-gallery__item">
+                            {ia_image file=$img type='large' title=$img.title|default:$item.title|escape}
+                        </div>
+                    {/foreach}
+                </div>
 
-            {ia_add_js}
+                {ia_add_js}
 $(function()
 {
     $('.sl-gallery').owlCarousel({
@@ -36,7 +37,12 @@ $(function()
         navText: ['<span class="fe fe-arrow-left"></span>','<span class="fe fe-arrow-right"></span>']
     });
 });
-            {/ia_add_js}
+                {/ia_add_js}
+            {else}
+                <div class="sl-gallery">
+                    <div class="sl-gallery__item">{ia_image file=$item.gallery[0] type='large' title=$item.title|default:$item.title|escape class='img-responsive'}</div>
+                </div>
+            {/if}
         {elseif $item.image}
             <div class="d-view__info__img">
                 {ia_image file=$item.image type='large' title=$item.title|default:$item.title|escape class='img-responsive'}
