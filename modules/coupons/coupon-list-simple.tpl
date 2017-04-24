@@ -12,11 +12,9 @@
     </div>
     <div class="coupon__body">
         <div class="coupon__type">
-            {lang key='coupon'}
-            {*
             {if $listing.sponsored}<span class="label label-warning" title="{lang key='sponsored'}"><span class="fa fa-star"></span> {lang key='sponsored'}</span>{/if}
             {if $listing.featured}<span class="label label-info" title="{lang key='featured'}"><span class="fa fa-star-o"></span> {lang key='featured'}</span>{/if}
-            *}
+            {lang key='coupon'}
         </div>
         <div class="coupon__title">
             {$listing.title}
@@ -24,7 +22,7 @@
         <div class="coupon__desc">{$listing.short_description|strip_tags|truncate:150:'...'}</div>
         <div class="coupon__shop">
             <a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">{$listing.shop_title}</a>
-            {if $listing.category_parent_id > 0 && (!isset($category) || $category._pid > 1)}
+            {if $listing.category_parent_id > 0 && !empty($category) && $category.parent_id > 1}
                 / <a href="{$core.packages.coupons.url}{$listing.category_alias}/">{$listing.category_title}</a>
             {/if}
         </div>
@@ -49,8 +47,8 @@
             ">
                 <span class="btn-coupon__cover">{lang key='show_code'}</span>
                 <span class="btn-coupon__code">
-                    <span class="btn-coupon__code__copy js-copy" data-clipboard-text="{$listing.coupon_code}" title="{lang key='coupon_copy_to_clipboard'}"><span class="fa fa-scissors"></span></span>
-                    {$listing.coupon_code}
+                    <span class="btn-coupon__code__copy js-copy" data-clipboard-text="{$listing.code}" title="{lang key='coupon_copy_to_clipboard'}"><span class="fa fa-scissors"></span></span>
+                    {$listing.code}
                 </span>
             </div>
 

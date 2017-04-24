@@ -10,7 +10,7 @@
         </p>
     </div>
 
-    <div class="d-view__info">
+    <div class="d-view__info{if 'deal' == $item.type} -deal{/if}">
         {if $item.gallery}
             <div class="owl-carousel sl-gallery">
                 {foreach $item.gallery as $img}
@@ -37,14 +37,14 @@ $(function()
     });
 });
             {/ia_add_js}
-        {elseif $item.coupon_image}
+        {elseif $item.image}
             <div class="d-view__info__img">
-                {ia_image file=$item.coupon_image type='large' title=$item.title|default:$item.title|escape class='img-responsive'}
+                {ia_image file=$item.image type='large' title=$item.title|default:$item.title|escape class='img-responsive'}
             </div>
         {/if}
 
-        <div class="d-view-deal">
-            <div class="d-view-deal__actions">
+        <div class="d-view-body">
+            <div class="d-view-body__actions">
                 {foreach $core.actions as $name => $action}
                     {if 'action-favorites' == $name}
                         {printFavorites item=$item itemtype=$item.item guests=true}
@@ -55,20 +55,31 @@ $(function()
                     {/if}
                 {/foreach}
             </div>
-            <div class="d-view-deal__type">{lang key="{$item.coupon_type}_coupon"}</div>
-            {if 'deal' == $item.coupon_type}
-                <div class="d-view-deal__price">
-                    <span class="d-view-deal__price__current">{(int)$item.discounted_price}</span>
-                    <span class="d-view-deal__price__old">{lang key='old_price'}: <span>{(int)$item.item_price}</span></span>
-                    <span class="d-view-deal__price__save">{lang key='you_save'}: {(int)$item.discount_saving}</span>
+            <div class="d-view-body__type">{lang key="{$item.type}_coupon"}</div>
+
+            {if 'deal' == $item.type}
+                <div class="d-view-body__price">
+                    <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{(int)$item.discounted_price}</span>
+                    <span class="d-view-body__price__old">{lang key='old_price'}: <span>{$core.config.coupon_item_price_currency}{(int)$item.item_price}</span></span>
+                    <span class="d-view-body__price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{(int)$item.discount_saving}</span>
                 </div>
             {/if}
 
-            <div class="d-view-deal__buy">
-                {if 'deal' == $item.coupon_type}
-                    <a href="#" class="d-view-deal__buy__btn">{lang key='buy'}</a>
+            <div class="d-view-body__buy">
+                {if 'deal' == $item.type}
+                    {if isset($item.buy_code_link)}<a href="{$item.buy_code_link}" class="d-view-body__buy__btn">{lang key='buy'}</a>{/if}
                 {else}
-                    <a href="#" class="d-view-deal__buy__btn js-print-coupon"><span class="fa fa-print"></span> {lang key='print_coupon'}</a>
+                    <a href="#" class="d-view-body__buy__btn js-print-coupon"><span class="fa fa-print"></span> {lang key='print_coupon'}</a>
+
+                    {ia_add_js}
+$(function() {
+    $('.js-print-coupon').click(function (e) {
+        e.preventDefault();
+
+        window.print();
+    });
+})
+                    {/ia_add_js}
                 {/if}
 
                 <div class="coupon-rate">
@@ -78,18 +89,18 @@ $(function()
                 </div>
             </div>
 
-            <div class="d-view-deal__more">
+            <div class="d-view-body__more">
                 {if $item.expire_date != 0}
-                    <div class="d-view-deal__more__item -time-left">
+                    <div class="d-view-body__more__item -time-left">
                         <span class="fe fe-clock"></span> <span class="js-countdown" data-countdown="{$item.expire_date}"></span>
                     </div>
                 {/if}
                 {if $item.activations}
-                    <div class="d-view-deal__more__item -activations">
+                    <div class="d-view-body__more__item -activations">
                         <span class="fe fe-bag"></span> {$item.activations_sold} {lang key='bought'}
                     </div>
                 {/if}
-                <div class="d-view-deal__more__item -views">
+                <div class="d-view-body__more__item -views">
                     <span class="fe fe-eye"></span> {$item.views_num}
                 </div>
             </div>
@@ -121,7 +132,7 @@ $(function()
 </div>
 
 {ia_hooker name='smartyViewCouponBeforeFooter'}
-{ia_add_media files='js:_IA_URL_packages/coupons/js/front/view'}
+{ia_add_media files='js:_IA_URL_modules/coupons/js/front/view'}
 
 {*
 <div class="couponItem">

@@ -42,14 +42,14 @@
     .box-shadow(0 1px 1px rgba(0,0,0,.1));
     background: #fff;
 
-    .sl-gallery {
-      width: 54%;
-      float: left;
-    }
+    // .sl-gallery {
+    //   width: 40%;
+    //   float: left;
+    // }
 
     &__img {
       float: left;
-      width: 54%;
+      width: 40%;
       padding: 40px;
     }
 
@@ -137,8 +137,19 @@
   }
 }
 
-.d-view-deal {
-  padding: 40px 60px;
+.d-view-body {
+  padding: 40px;
+  overflow: hidden;
+
+  &.-deal {
+    overflow: visible;
+  }
+
+  &__type {
+    text-transform: uppercase;
+    color: fade(@text-color, 50%);
+    margin-bottom: 30px;
+  }
 
   &__actions {
     float: right;
@@ -149,7 +160,7 @@
 
       &,
       &:focus {
-        color: fade(@text-color, 50%);
+        color: fade(@text-color, 35%);
         text-decoration: none;
       }
 
@@ -158,12 +169,6 @@
         text-decoration: none;
       }
     }
-  }
-
-  &__type {
-    text-transform: uppercase;
-    color: fade(@text-color, 50%);
-    margin-bottom: 30px;
   }
 
   &__price {
@@ -279,6 +284,19 @@
   }
 }
 
+.d-view__info.-deal {
+  .d-view-body__price {
+    float: left;
+  }
+
+  .d-view-body__buy {
+    float: right;
+  }
+
+  .d-view-body__more {
+    clear: both;
+  }
+}
 
 .shop-info {
 

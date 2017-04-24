@@ -16,11 +16,9 @@
     </div>
     <div class="coupon__body">
         <div class="coupon__type">
-            {lang key='deal_coupon'}
-            {*
             {if $listing.sponsored}<span class="label label-warning" title="{lang key='sponsored'}"><span class="fa fa-star"></span> {lang key='sponsored'}</span>{/if}
             {if $listing.featured}<span class="label label-info" title="{lang key='featured'}"><span class="fa fa-star-o"></span> {lang key='featured'}</span>{/if}
-            *}
+            {lang key='deal_coupon'}
         </div>
         <div class="coupon__title">
             {ia_url type='link' item='coupons' data=$listing text=$listing.title}
@@ -28,7 +26,7 @@
         <div class="coupon__desc">{$listing.short_description|strip_tags|truncate:150:'...'}</div>
         <div class="coupon__shop">
             <a href="{$smarty.const.IA_URL}shop/{$listing.shop_alias}.html">{$listing.shop_title}</a>
-            {if $listing.category_parent_id > 0 && (!isset($category) || $category._pid > 1)}
+            {if $listing.category_parent_id > 0 && !empty($category) && $category.parent_id > 1}
                 / <a href="{$core.packages.coupons.url}{$listing.category_alias}/">{$listing.category_title}</a>
             {/if}
         </div>
@@ -45,9 +43,9 @@
             {/if}
 
             <div class="coupon__price-price">
-                <span class="coupon__price-price__current">{(int)$listing.discounted_price}</span>
-                <span class="coupon__price-price__old">{(int)$listing.item_price}</span>
-                <span class="coupon__price-price__save">{lang key='you_save'}: {(int)$listing.discount_saving}</span>
+                <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{(int)$listing.discounted_price}</span>
+                <span class="coupon__price-price__old">{$core.config.coupon_item_price_currency}{(int)$listing.item_price}</span>
+                <span class="coupon__price-price__save">{lang key='you_save'}: {$core.config.coupon_item_price_currency}{(int)$listing.discount_saving}</span>
             </div>
 
             <a href="{ia_url type='url' item='coupons' data=$listing}" class="btn-coupon btn-coupon-link"><span class="fa fa-shopping-cart"></span> {lang key='get_deal'}</a>

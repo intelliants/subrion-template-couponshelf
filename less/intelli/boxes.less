@@ -149,17 +149,18 @@
         width: 30px;
         text-align: center;
       }
-
-      > img {
-        max-width: 30px;
-        vertical-align: middle;
-        display: inline-block;
-        margin-right: 10px;
-      }
     }
 
     &:first-child > a {
       border-top: 0;
+    }
+
+    &.active  > a,
+    &.active  > a:hover,
+    &.active  > a:focus {
+      color: #fff;
+      text-decoration: none;
+      background: @brand-dark;
     }
   }
 }

@@ -238,7 +238,7 @@
         <block status="active" position="right">new_blog_posts</block>
         <block status="active" position="right">blogs_archive</block>
 
-        <block status="inactive" position="bottom" title="Categories" order="-1">browse_coupons</block>
+        <block status="inactive" position="top" pages="coupons_home" title="Categories" order="-1">browse_coupons</block>
         <block status="inactive">blogroll</block>
         <block status="inactive" position="right">common_statistics</block>
         <block status="inactive" position="right">filters</block>

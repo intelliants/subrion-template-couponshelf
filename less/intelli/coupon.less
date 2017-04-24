@@ -56,11 +56,25 @@
     text-transform: uppercase;
     color: fade(@text-color, 50%);
     margin-bottom: 10px;
+
+    .label {
+      display: inline-block;
+      margin-right: 5px;
+
+      &.label-warning {
+        color: darken(@brand-warning, 15%);
+      }
+
+      &.label-info {
+        color: darken(@brand-info, 30%);
+      }
+    }
   }
 
   &__title {
     font-size: 16px;
     margin-bottom: 10px;
+    color: fade(@text-color, 70%);
 
     a {
       color: @text-color;
@@ -180,6 +194,15 @@
       .transition(all .15s ease-in-out);
     }
   }
+
+  // modifiers
+  &.-featured {
+    outline: 2px dashed fade(@brand-info, 15%);
+  }
+
+  &.-sponsored {
+    outline: 2px dashed fade(@brand-warning, 25%);
+  }
 }
 
 .coupon.-v {
@@ -199,6 +222,10 @@
   .coupon__body {
     display: block;
     padding: 20px;
+  }
+
+  .coupon__desc {
+    display: none;
   }
 
   .coupon__price {
