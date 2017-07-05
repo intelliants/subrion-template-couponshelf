@@ -1,7 +1,7 @@
 <div class="shop-page">
     {if $item.shop_image}
         <div class="shop-page__image">
-            {ia_image file=$item.shop_image type='thumbnail' title=$item.title}
+            {ia_image file=$item.shop_image type='thumbnail' title=$item.title class='img-responsive'}
         </div>
     {else}
         <div class="shop-page__image-screen">
