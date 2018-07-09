@@ -45,29 +45,16 @@
             <div class="coupon__price-price">
                 {if $listing.item_price && '0.00' != $listing.item_price}
                     {if $listing.item_discount}
-                        <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.cost}</span><br>
-                        <span class="coupon__price-price__old">{lang key='old_price'} <span>{$core.config.coupon_item_price_currency}{$listing.item_price}</span></span>
-                        <span class="coupon__price-price__save">{lang key='you_save'}
-                            {if 'percent' == $listing.item_discount_type}
-                                {$listing.item_discount}%
-                            {else}
-                                {$core.config.coupon_item_price_currency}{$listing.item_discount|string_format:"%.2f"}
-                            {/if}
-                        </span>
+                        <span class="coupon__price-price__current">{$listing.cost_formatted}</span><br>
+                        <span class="coupon__price-price__old">{lang key='old_price'} <span>{$listing.item_price_formatted}</span></span>
+                        <span class="coupon__price-price__save">{lang key='you_save'} {$listing.item_discount_formatted}</span>
                     {else}
-                        <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.item_price}</span>
+                        <span class="coupon__price-price__current">{$listing.item_price_formatted}</span>
                     {/if}
                 {else}
-                    <span class="coupon__price-price__current">{$core.config.coupon_item_price_currency}{$listing.cost}</span><br>
+                    <span class="coupon__price-price__current">{$listing.cost_formatted}</span><br>
                     {if $listing.item_discount}
-                        <span class="coupon__price-price__save">
-                            {lang key='you_save'} 
-                            {if 'percent' == $listing.item_discount_type}
-                                {$listing.item_discount}%
-                            {else}
-                                {$core.config.coupon_item_price_currency}{$listing.item_discount|string_format:"%.2f"}
-                            {/if}
-                        </span>
+                        <span class="coupon__price-price__save">{lang key='you_save'} {$listing.item_discount_formatted}</span>
                     {/if}
                 {/if}
             </div>

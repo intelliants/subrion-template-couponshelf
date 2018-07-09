@@ -2,7 +2,7 @@
     <div class="d-view__title">
         <h1>{$item.title}</h1>
         <p>
-            {ia_url type='link' item='ccats' data=$coupon_category text=$coupon_category.title rel='tag'}</span>
+            {ia_url type='link' item='ccats' data=$coupon_category text=$coupon_category.title rel='tag'}
             <span>/</span>
             {$item.date_added|date_format:$core.config.date_format}
             <span>/</span>
@@ -67,28 +67,17 @@ $(function()
                 <div class="d-view-body__price">
                     {if $item.item_price && '0.00' != $item.item_price}
                         {if $item.item_discount}
-                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.cost}</span>
-                            <span class="d-view-body__price__old">{lang key='old_price'} <span>{$core.config.coupon_item_price_currency}{$item.item_price}</span></span>
-                            <span class="d-view-body__price__save">{lang key='you_save'}
-                                {if 'percent' == $item.item_discount_type}
-                                    {$item.item_discount}%
-                                {else}
-                                    {$core.config.coupon_item_price_currency}{$item.item_discount|string_format:"%.2f"}
-                                {/if}
-                            </span>
+                            <span class="d-view-body__price__current">{$item.cost_formatted}</span>
+                            <span class="d-view-body__price__old">{lang key='old_price'} <span>{$item.item_price_formatted}</span></span>
+                            <span class="d-view-body__price__save">{lang key='you_save'}{$item.item_discount_formatted}</span>
                         {else}
-                            <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.item_price}</span>
+                            <span class="d-view-body__price__current">{$item.item_price_formatted}</span>
                         {/if}
                     {else}
-                        <span class="d-view-body__price__current">{$core.config.coupon_item_price_currency}{$item.cost}</span>
+                        <span class="d-view-body__price__current">{$item.cost_formatted}</span>
                         {if $item.item_discount}
                             <span class="d-view-body__price__save">
-                                {lang key='you_save'} 
-                                {if 'percent' == $item.item_discount_type}
-                                    {$item.item_discount}%
-                                {else}
-                                    {$core.config.coupon_item_price_currency}{$item.item_discount|string_format:"%.2f"}
-                                {/if}
+                                {lang key='you_save'} {$item.item_discount_formatted}
                             </span>
                         {/if}
                     {/if}
@@ -158,9 +147,7 @@ $(function() {
                         {if $codes}
                             <table class="table">
                                 <tbody>
-                                    {$total = 0}
                                     {foreach $codes as $codeEntry}
-                                        {$total = $total + $codeEntry.amount}
                                         <tr>
                                             <td>
                                                 <p>{lang key='simple_coupon'} <strong>{$codeEntry.code}</strong></p>
@@ -175,7 +162,7 @@ $(function() {
                                                     {/foreach}
                                                 </select>
                                             </td>
-                                            <td>{$codeEntry.currency} {$codeEntry.amount}</td>
+                                            <td>{$codeEntry.amount_formatted}</td>
                                         </tr>
                                     {/foreach}
                                     <tr>
